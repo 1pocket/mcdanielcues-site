@@ -1,177 +1,60 @@
-<!--
-McDaniel Cues — Static One‑Page Site for GitHub Pages
-Author: ChatGPT
+<!-- ========================= index.html ========================= -->
+<h2>News</h2>
+<p class="lead">Updates from the shop and archive.</p>
+<div class="cards">
+<article class="card">
+<a href="news/bill-chase-ladder.html"><img src="assets/bill%20chase%20ladder%20blog.jpg" alt="Bill and Chase with ladder"/></a>
+<div class="cap">
+<a href="news/bill-chase-ladder.html"><strong>Bill & Chase — Ladder Photo</strong></a>
+<div>From the archive / shop update</div>
+</div>
+</article>
+</div>
+<p style="margin-top:12px"><a href="news/">See all news →</a></p>
+</section>
 
-README (quick start)
-1) Create a repo on GitHub, e.g. mcdanielcues-site.
-2) Add this `index.html` file to the root of the repo and commit.
-3) In GitHub: Settings → Pages → Build and deployment → Source: "Deploy from a branch"; Branch: `main` / `/root` → Save. Your site will publish at https://<username>.github.io/mcdanielcues-site/.
-4) Custom domain (mcdanielcues.com):
-   - In Pages settings, add your custom domain `mcdanielcues.com` and enable HTTPS.
-   - DNS: set an A record to GitHub Pages IPs OR a CNAME `www` → `<username>.github.io`. Pages UI shows the exact values. Create a `CNAME` file in the repo root with `mcdanielcues.com` inside so GitHub knows your domain.
-5) Edit content: Search for `<!-- EDIT ME -->` markers below. No build tools required.
-6) Optional: replace `assets/hero.jpg` and other images with your own (create an `/assets` folder). If serving from root only, you can use external image URLs.
 
-Future‑friendly: This is pure HTML/CSS/JS (no framework). You can later migrate to Astro/Eleventy/Next without redesigning the content model.
--->
+<!-- VISIT / CONTACT -->
+<section id="visit" class="visit">
+<h2>Visit (by appointment)</h2>
+<div class="card">
+<p><strong>Address</strong><br>2000 N Highland Ave<br>Jackson, TN 38305</p>
+<p><strong>Contact</strong><br>
+Email: <a href="mailto:info@mcdanielcues.com">info@mcdanielcues.com</a><br>
+Phone: <a href="tel:+17316683800">(731) 668‑3800</a></p>
+<p><a class="pill" href="https://maps.google.com/?q=2000+N+Highland+Ave+Jackson+TN+38305" target="_blank" rel="noreferrer">Get Directions</a></p>
+</div>
+</section>
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>McDaniel Cues — Jackson, Tennessee</title>
-  <meta name="description" content="Bill McDaniel Custom Cues — By appointment in Jackson, Tennessee. A legacy in cue making since the late 1960s." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --ink:#0f172a; --muted:#475569; --panel:#ffffff; --line:#e2e8f0; --brand:#1e3a8a; --brand-ink:#dbeafe;
-      --bg:linear-gradient(135deg,#f6f7fb,#ffffff);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg);} 
-    a{color:var(--brand); text-decoration:none}
-    .wrap{max-width:1100px; margin:0 auto; padding:0 20px}
-    header{position:sticky; top:0; z-index:20; background:#fff8; -webkit-backdrop-filter:saturate(1.2) blur(8px); backdrop-filter:saturate(1.2) blur(8px); border-bottom:1px solid #ffffff80}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{font-weight:800; letter-spacing:-.02em}
-    .nav a.btn{padding:10px 14px; border:1px solid var(--ink); border-radius:999px}
 
-    .hero{position:relative; overflow:hidden; border-radius:20px; margin:24px 0 12px}
-    .hero .bg{position:absolute; inset:0; background: url('assets/hero.jpg') center/cover no-repeat, radial-gradient(1200px 600px at 10% 10%, #0b1223, #0a0f1e); filter: brightness(.58)}
-    .hero .inner{position:relative; padding:88px 20px; text-align:center}
-    .eyebrow{color:#c7dcff; font-weight:700; letter-spacing:.12em; text-transform:uppercase}
-    h1{font-size: clamp(32px,6vw,64px); color:#fff; margin:8px 0 10px; letter-spacing:-.02em}
-    .sub{color:#eaf1ff; font-size: clamp(16px,2.2vw,20px); max-width:760px; margin:0 auto}
-    .cta{display:inline-block; margin-top:18px; padding:12px 18px; border-radius:999px; background:var(--brand); color:#fff; font-weight:700}
+<footer>© <span id="year"></span> McDaniel Cues • Jackson, Tennessee</footer>
+</main>
 
-    section{margin:54px 0}
-    h2{font-size: clamp(24px,4vw,36px); letter-spacing:-.01em; margin:0 0 8px}
-    .lead{color:var(--muted); max-width:800px}
 
-    /* Timeline */
-    .timeline{display:grid; grid-template-columns: 1fr; gap:22px; margin-top:24px}
-    @media(min-width:900px){ .timeline{ grid-template-columns: 260px 1fr; } }
-    .rail{position:relative; padding-left:20px}
-    .rail::before{content:""; position:absolute; left:8px; top:0; bottom:0; width:2px; background:linear-gradient(#cbd5e1,#94a3b8)}
-    .events{display:grid; gap:16px}
-    .event{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 1px 2px rgba(0,0,0,.04)}
-    .event .year{font-weight:800; color:#0b1223}
-    .event h3{margin:4px 0 8px}
-    .event img{width:100%; height:auto; border-radius:12px; margin-top:10px}
-
-    /* Simple gallery */
-    .grid{display:grid; grid-template-columns:repeat(1,1fr); gap:12px}
-    @media(min-width:700px){ .grid{ grid-template-columns:repeat(3,1fr); } }
-    .card{background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden}
-    .card img{display:block; width:100%; height:260px; object-fit:cover}
-    .card .cap{padding:10px}
-
-    .visit .card{padding:18px}
-    .pill{display:inline-block; padding:8px 12px; border:1px solid var(--ink); border-radius:999px}
-    footer{margin:40px 0; color:#64748b; font-size:14px}
-  </style>
-</head>
-<body>
-  <header>
-    <div class="wrap nav">
-      <div class="brand">McDaniel Cues</div>
-      <nav>
-        <a href="#timeline" class="pill">Timeline</a>
-        <a href="#gallery" class="pill">Gallery</a>
-        <a href="#visit" class="pill">Visit</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="bg" aria-hidden="true"></div>
-      <div class="inner">
-        <div class="eyebrow">Custom Made in the U.S.A.</div>
-        <h1>Bill McDaniel Custom Cues</h1>
-        <p class="sub">Proudly built in Jackson, Tennessee — by appointment only.</p>
-        <a class="cta" href="#visit">Contact & Visit</a>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About Bill McDaniel</h2>
-      <p class="lead">Bill began building cues in the late 1960s after growing up around the game in Jackson, Tennessee. For decades, McDaniel cues have been prized for their hit, balance, and meticulous fit and finish. Today we work by appointment in Jackson as we document the archive and produce select new builds.</p>
-    </section>
-
-    <!-- TIMELINE -->
-    <section id="timeline">
-      <h2>A Legacy in Cue Making</h2>
-      <p class="lead">Key milestones from the late‑1960s to today.</p>
-      <div class="timeline">
-        <div class="rail">
-          <!-- purely decorative line -->
-        </div>
-        <div class="events" id="events">
-          <!-- EDIT ME: Timeline items live in the JSON below; JS renders them here. -->
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY (optional) -->
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <p class="lead">A small selection from the archive. Replace these images with your own.</p>
-      <div class="grid">
-        <figure class="card"><img src="https://images.unsplash.com/photo-1591348279847-47cacc1b7a64?q=80&w=1200&auto=format&fit=crop" alt="Cue detail"/><figcaption class="cap">Ivory & ebony detail</figcaption></figure>
-        <figure class="card"><img src="https://images.unsplash.com/photo-1542614471-001ccf2b449c?q=80&w=1200&auto=format&fit=crop" alt="Inlays"/><figcaption class="cap">Precision inlays</figcaption></figure>
-        <figure class="card"><img src="https://images.unsplash.com/photo-1599987284919-f85088a8b79e?q=80&w=1200&auto=format&fit=crop" alt="Workshop"/><figcaption class="cap">Workshop</figcaption></figure>
-      </div>
-    </section>
-
-    <!-- VISIT / CONTACT -->
-    <section id="visit" class="visit">
-      <h2>Visit (by appointment)</h2>
-      <div class="card">
-        <p><strong>Address</strong><br>2000 N Highland Ave<br>Jackson, TN 38305</p>
-        <p><strong>Contact</strong><br>
-          Email: <a href="mailto:info@mcdanielcues.com">info@mcdanielcues.com</a><br>
-          Phone: <a href="tel:+17316683800">(731) 668‑3800</a></p>
-        <p><a class="pill" href="https://maps.google.com/?q=2000+N+Highland+Ave+Jackson+TN+38305" target="_blank" rel="noreferrer">Get Directions</a></p>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> McDaniel Cues • Jackson, Tennessee
-    </footer>
-  </main>
-
-  <script>
-    // --- EDIT ME: Timeline Data ---
-    const TIMELINE = [
-      { year: "Late 1960s", title: "Beginnings", body: "Bill starts building cues in Jackson, Tennessee.", img: "" },
-      { year: "1970s", title: "First Custom Builds", body: "Early customs establish a reputation for playability and meticulous fit/finish.", img: "" },
-      { year: "1990s–2000s", title: "Wider Recognition", body: "McDaniel cues circulate among serious players and collectors.", img: "" },
-      { year: "2010s", title: "Legacy Pieces & Restorations", body: "Select builds and restorations become sought‑after collector pieces.", img: "" },
-      { year: "2023", title: "New Location Announced", body: "By‑appointment workshop on N Highland Ave, Jackson, TN.", img: "" },
-      { year: "2025", title: "Craft Revival", body: "Renewed focus on small‑batch customs, restorations, and archival documentation.", img: "" }
-    ];
-
-    const eventsEl = document.getElementById('events');
-    const makeEvent = (e) => {
-      const el = document.createElement('article');
-      el.className = 'event';
-      el.innerHTML = `
-        <div class="year">${e.year}</div>
-        <h3>${e.title}</h3>
-        <p>${e.body}</p>
-        ${e.img ? `<img src="${e.img}" alt="${e.title}">` : ''}
-      `;
-      return el;
-    };
-    TIMELINE.forEach(item => eventsEl.appendChild(makeEvent(item)));
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script>
+// --- Timeline Data ---
+const TIMELINE = [
+{ year: "Late 1960s", title: "Beginnings", body: "Bill starts building cues in Jackson, Tennessee.", img: "assets/timeline-1969-shop.jpg" },
+{ year: "1970s", title: "First Custom Builds", body: "Early customs establish a reputation for playability and meticulous fit/finish.", img: "" },
+{ year: "1990s–2000s", title: "Wider Recognition", body: "McDaniel cues circulate among serious players and collectors.", img: "" },
+{ year: "2010s", title: "Legacy Pieces & Restorations", body: "Select builds and restorations become sought‑after collector pieces.", img: "" },
+{ year: "2023", title: "New Location Announced", body: "By‑appointment workshop on N Highland Ave, Jackson, TN.", img: "assets/bill%20techno%20photo.jpg" },
+{ year: "2025", title: "Craft Revival", body: "Renewed focus on small‑batch customs, restorations, and archival documentation.", img: "" }
+];
+const eventsEl = document.getElementById('events');
+const makeEvent = (e) => {
+const el = document.createElement('article');
+el.className = 'event';
+el.innerHTML = `
+<div class="year">${e.year}</div>
+<h3>${e.title}</h3>
+<p>${e.body}</p>
+${e.img ? `<img src="${e.img}" alt="${e.title}">` : ''}
+`;
+return el;
+};
+TIMELINE.forEach(item => eventsEl.appendChild(makeEvent(item)));
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
