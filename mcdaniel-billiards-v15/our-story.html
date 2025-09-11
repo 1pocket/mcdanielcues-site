@@ -5,30 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Our Story — McDaniel Cues</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"><!-- optional external if you separate CSS -->
-
   <style>
-    body{margin:0;background:#0b0b0c;color:#f2f2f2;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    :root{--bg:#0b0b0c;--bg-soft:#121214;--ink:#f2f2f2;--muted:#cfcfcf;--accent:#b48a62;--grid:1200px}
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
     a{color:inherit;text-decoration:none}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    header,footer{background:#121214}
-    header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.06)}
+    .container{max-width:var(--grid);margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(180deg,rgba(11,11,12,.9),rgba(11,11,12,.6));border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand img{width:28px;height:28px;border-radius:6px;display:block}
     nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0}
-    nav a{font-weight:600;letter-spacing:.02em;opacity:.92;padding:8px 2px;border-bottom:2px solid transparent}
-    nav a:hover,nav a.active{border-color:#b48a62;opacity:1}
-    .cta{padding:10px 16px;border-radius:999px;background:#b48a62;color:#121214;font-weight:700}
+    nav a{font-weight:600;letter-spacing:.02em;opacity:.92;color:var(--ink);padding:8px 2px;border-bottom:2px solid transparent;transition:border-color .2s,opacity .2s}
+    nav a:hover,nav a.active{border-color:var(--accent);opacity:1}
+    nav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+    .cta{padding:10px 16px;border-radius:999px;background:var(--accent);color:#121214;font-weight:700}
+    main{padding:80px 0}
     h1,h2{font-family:"Crimson Pro",serif}
-    .story{padding:80px 0}
-    .story p{max-width:70ch;line-height:1.6;margin-bottom:1.2em;color:#cfcfcf}
-    footer{padding:36px 0;color:#cfcfcf;text-align:center}
+    .lede{color:var(--muted);max-width:70ch;margin-top:6px}
+    .story{display:grid;grid-template-columns:1fr 420px;gap:36px;margin-top:28px}
+    .story p{max-width:70ch;line-height:1.7;margin:0 0 1.1em;color:#cfcfcf}
+    .aside{background:var(--bg-soft);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:20px}
+    .aside img{width:100%;height:auto;border-radius:12px;object-fit:cover}
+    footer{padding:36px 0;color:#cfcfcf;border-top:1px solid rgba(255,255,255,.06)}
+    @media (max-width:980px){.story{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <div class="brand">
-        <img src="assets/img/crest.svg" alt="McDaniel diamond mark" style="width:28px;height:28px;border-radius:6px">
+        <img src="assets/img/crest.svg" alt="McDaniel diamond mark">
         <span>McDaniel Cues</span>
       </div>
       <nav>
@@ -44,8 +52,39 @@
     </div>
   </header>
 
-  <main class="story container">
-    <h1>Our Story</h1>
-    <p>Since 1971, Bill McDaniel has been crafting cues that transcend equipment and become heirlooms. Each McDaniel cue begins with hand-selected woods — birdseye maple, gaboon ebony — paired with precious materials like silver and ivory. Every taper is measured to the thousandth, every inlay set with jeweler’s precision.</p>
-    <p>Bill’s philosophy is simple: perfection is not an accident, it is the result of patience, discipline,
+  <main>
+    <div class="container">
+      <h1>Our Story</h1>
+      <p class="lede">A McDaniel cue is not purchased — it is commissioned. Since 1971, Bill McDaniel has built every piece with heirloom intent: hand-selected woods, surgical tolerances, and a finish meant to last decades of play.</p>
+
+      <div class="story">
+        <div>
+          <!-- Replace this body with the long-form story text you wrote earlier if you prefer -->
+          <p>From Jackson, Tennessee, Bill’s shop has produced cues for world champions and private collectors alike. Each billet of birdseye maple or gaboon ebony is seasoned and selected for stability. Silver and ivory inlays are set like jewelry — not just for beauty, but to balance the cue’s dynamics in the player’s hand.</p>
+          <p>Every taper is measured to the thousandth. Ferrules are turned true. The finish is cured and hand-polished until the cue feels alive on the bridge and true on the stroke. Production remains finite by design — protecting the standard that made McDaniel a name of record among cue makers.</p>
+          <p>We operate with a waiting list not to create hype, but to respect the pace of excellence. If an instrument will carry your name for a lifetime, it deserves a maker’s patience.</p>
+          <h2>Lineage & Legacy</h2>
+          <p>What distinguishes a McDaniel cue is not a single feature, but the sum of decisions: wood with soul, geometry with discipline, and finishes that age with grace. The result is equipment that disappears in the player’s hands — leaving only feel, focus, and confidence.</p>
+          <p>For collectors, provenance matters. Each commission is documented and delivered with care, not as inventory but as a signature. Many of our cues live in private collections and return only for cleaning or to be admired under light — which suits us just fine.</p>
+        </div>
+        <aside class="aside">
+          <img src="assets/img/bill-chase-shop.jpg" alt="Inside the McDaniel workshop">
+          <div style="margin-top:12px;color:#cfcfcf">Inside the McDaniel workshop — Jackson, Tennessee.</div>
+        </aside>
+      </div>
+
+      <div style="margin-top:32px">
+        <a class="cta" href="index.html#waiting">Join the Waiting List</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> McDaniel Cues • All Rights Reserved</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
 
