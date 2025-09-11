@@ -96,28 +96,37 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero" aria-label="McDaniel Cues showcase">
-    <div class="slides">
-      <!-- Per-image object-position aims the crop at the inlay/sleeve -->
-      <figure class="slide active"><img src="assets/img/gallery-1-birdseye-ivory-silve.jpg" alt="Ivory & silver inlay closeup" style="object-position:60% 45%"/></figure>
-      <figure class="slide"><img src="assets/img/gallery-2-gaboon-ebony-front.jpg" alt="Gaboon ebony inlays" style="object-position:62% 48%"/></figure>
-      <figure class="slide"><img src="assets/img/gallery-3-ebony-ivory-rear.jpg" alt="Ebony & ivory rear sleeve" style="object-position:40% 60%"/></figure>
-      <figure class="slide"><img src="assets/img/gallery-4-ebony-ivory-rear-al.jpg" alt="Alternate rear design" style="object-position:42% 62%"/></figure>
-    </div>
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="container hero-content">
-      <div class="hero-card">
-        <div class="eyebrow">Since 1971 • Jackson, Tennessee</div>
-        <h1>When Only the Best Will Do</h1>
-        <p class="subtitle">A McDaniel cue is not purchased — it is commissioned. Every piece is built with heirloom intent: hand-selected woods, surgical tolerances, and Bill McDaniel’s signature touch.</p>
-        <div class="hero-ctas">
-          <a class="btn primary" href="#waiting">Join the Waiting List</a>
-          <a class="btn" href="#gallery">View the Work</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- HERO -->
+<section id="home" class="hero" aria-label="McDaniel Cues showcase">
+  <div class="slides" id="slides">
+    <figure class="slide active">
+      <img src="assets/img/mcd-001-2.jpg" alt="McDaniel mcd-001 — inlay detail"
+           style="object-fit:cover;object-position:60% 45%" loading="eager" fetchpriority="high"
+           onerror="this.closest('.slide').remove()">
+    </figure>
+    <figure class="slide">
+      <img src="assets/img/mcd-001-3.jpg" alt="McDaniel mcd-001 — forearm detail"
+           style="object-fit:cover;object-position:62% 48%" loading="lazy"
+           onerror="this.closest('.slide').remove()">
+    </figure>
+    <figure class="slide">
+      <img src="assets/img/mcd-001-4.jpg" alt="McDaniel mcd-001 — sleeve detail"
+           style="object-fit:cover;object-position:42% 60%" loading="lazy"
+           onerror="this.closest('.slide').remove()">
+    </figure>
+    <figure class="slide">
+      <img src="assets/img/mcd-001-6.jpg" alt="McDaniel mcd-001 — full cue"
+           style="object-fit:cover;object-position:50% 50%" loading="lazy"
+           onerror="this.closest('.slide').remove()">
+    </figure>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <!-- keep your hero card as-is -->
+    …
+  </div>
+</section>
+
 
   <!-- Heritage -->
   <section class="container" aria-label="Heritage">
@@ -136,16 +145,41 @@
   </section>
 
   <!-- Gallery -->
-  <section id="gallery" class="container" aria-label="Cue Gallery">
-    <h2 class="section-title">Selected Work</h2>
-    <p class="section-sub">Photographed like fine jewelry. Tap to view full size.</p>
-    <div class="gallery" id="galleryGrid">
-      <a class="tile lg" href="assets/img/gallery-1-birdseye-ivory-silve.jpg"><img src="assets/img/gallery-1-birdseye-ivory-silve.jpg" alt="Ivory & silver inlay" style="object-position:60% 45%"></a>
-      <a class="tile lg" href="assets/img/gallery-2-gaboon-ebony-front.jpg"><img src="assets/img/gallery-2-gaboon-ebony-front.jpg" alt="Gaboon ebony inlays" style="object-position:62% 48%"></a>
-      <a class="tile md" href="assets/img/gallery-3-ebony-ivory-rear.jpg"><img src="assets/img/gallery-3-ebony-ivory-rear.jpg" alt="Ebony & ivory rear" style="object-position:40% 60%"></a>
-      <a class="tile md" href="assets/img/gallery-4-ebony-ivory-rear-al.jpg"><img src="assets/img/gallery-4-ebony-ivory-rear-al.jpg" alt="Alternate rear design" style="object-position:42% 62%"></a>
-    </div>
-  </section>
+<section id="gallery" class="container" aria-label="Cue Gallery">
+  <h2 class="section-title">Selected Work</h2>
+  <p class="section-sub">Photographed like fine jewelry. Tap to view full size.</p>
+
+  <div class="gallery" id="galleryGrid">
+    <!-- Two large tiles first -->
+    <a class="tile lg" href="assets/img/mcd-001-2.jpg">
+      <img src="assets/img/mcd-001-2.jpg" alt="mcd-001 — inlay detail"
+           style="object-position:60% 45%" onerror="this.closest('.tile').remove()">
+    </a>
+    <a class="tile lg" href="assets/img/mcd-001-6.jpg">
+      <img src="assets/img/mcd-001-6.jpg" alt="mcd-001 — full cue"
+           style="object-position:50% 50%" onerror="this.closest('.tile').remove()">
+    </a>
+
+    <!-- Medium tiles (other angles) -->
+    <a class="tile md" href="assets/img/mcd-001-1.jpg">
+      <img src="assets/img/mcd-001-1.jpg" alt="mcd-001 — forearm"
+           style="object-position:58% 48%" onerror="this.closest('.tile').remove()">
+    </a>
+    <a class="tile md" href="assets/img/mcd-001-3.jpg">
+      <img src="assets/img/mcd-001-3.jpg" alt="mcd-001 — forearm detail"
+           style="object-position:62% 48%" onerror="this.closest('.tile').remove()">
+    </a>
+    <a class="tile md" href="assets/img/mcd-001-4.jpg">
+      <img src="assets/img/mcd-001-4.jpg" alt="mcd-001 — butt sleeve"
+           style="object-position:42% 60%" onerror="this.closest('.tile').remove()">
+    </a>
+    <a class="tile md" href="assets/img/mcd-001-5.jpg">
+      <img src="assets/img/mcd-001-5.jpg" alt="mcd-001 — joint/handle"
+           style="object-position:45% 55%" onerror="this.closest('.tile').remove()">
+    </a>
+  </div>
+</section>
+
 
   <!-- Waiting List -->
   <section id="waiting" class="container">
