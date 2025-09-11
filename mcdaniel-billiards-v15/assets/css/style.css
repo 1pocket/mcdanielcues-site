@@ -71,3 +71,42 @@ footer{background:#14110f;border-top:1px solid rgba(176,130,44,.2); padding:24px
 /* Optional subtle outline button variant for secondary actions */
 .btn--ghost{background:transparent;color:var(--ink);border:1px solid rgba(176,130,44,.45)}
 .btn--ghost:hover{background:rgba(176,130,44,.12)}
+/* --- Header Nav Buttons --- */
+.nav .nav-btn { margin-left: 12px; }
+.btn.btn--small {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  line-height: 1.1;
+  border-radius: 8px;
+}
+
+/* Outline style so they fit into the header */
+.site-header .btn.btn--small {
+  border: 1px solid rgba(255,255,255,0.25);
+  background: transparent;
+  color: var(--ink);
+}
+.site-header .btn.btn--small:hover {
+  border-color: rgba(255,255,255,0.55);
+  transform: translateY(-1px);
+}
+/* Mobile nav stacking */
+@media (max-width: 720px) {
+  .site-header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-header nav a {
+    margin: 8px 0 0 0;
+  }
+  .site-header nav .nav-btn {
+    margin-top: 12px;
+    margin-left: 0;
+    width: 100%;       /* make buttons full width if you like */
+    text-align: center;
+  }
+}
+
+
+
