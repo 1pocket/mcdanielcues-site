@@ -6,39 +6,50 @@
   <title>McDaniel Cues — When Only the Best Will Do</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Preload likely first hero image (falls back in JS if name differs) -->
+  <!-- Preload likely first hero image -->
   <link rel="preload" as="image" href="assets/img/gallery-1-birdseye-ivory-silve.jpg">
 
   <style>
     :root{
-      --bg:#0b0b0c; --bg-soft:#121214; --ink:#f2f2f2; --muted:#cfcfcf; --accent:#b48a62; --grid:1200px;
+      --bg:#0b0b0c; --bg-soft:#121214; --ink:#f2f2f2;
+      --muted:#cfcfcf; --accent:#b48a62; --grid:1200px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--grid);margin:0 auto;padding:0 20px}
 
     /* Header/Nav */
     header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(180deg,rgba(11,11,12,.9),rgba(11,11,12,.6));border-bottom:1px solid rgba(255,255,255,.06)}
+      background:linear-gradient(180deg,rgba(11,11,12,.9),rgba(11,11,12,.6));
+      border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
     .brand img{width:28px;height:28px;border-radius:6px;display:block}
     nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0}
-    nav a{font-weight:600;opacity:.9;padding:6px 2px;border-bottom:2px solid transparent}
-    nav a:hover, nav a.active{border-color:var(--accent)}
-    .cta{padding:10px 16px;border-radius:999px;background:var(--accent);color:#121214;font-weight:700}
+    nav a{font-weight:600;letter-spacing:.02em;opacity:.92;color:var(--ink);
+      padding:8px 2px;border-bottom:2px solid transparent;
+      transition:border-color .2s ease, opacity .2s ease}
+    nav a:hover,nav a.active{border-color:var(--accent);opacity:1}
+    nav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+    .cta{padding:10px 16px;border-radius:999px;background:var(--accent);
+      color:#121214;font-weight:700}
 
     /* Hero */
-    .hero{position:relative;height:78svh;min-height:520px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero{position:relative;height:78svh;min-height:520px;overflow:hidden;
+      border-bottom:1px solid rgba(255,255,255,.06)}
     .slides{position:absolute;inset:0;display:grid}
     .slide{grid-area:1/1;opacity:0;transition:opacity 900ms ease}
     .slide.active{opacity:1}
-    .slide img{width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.02) saturate(1.05)}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.50),rgba(0,0,0,.15) 40%,rgba(0,0,0,.65))}
+    .slide img{width:100%;height:100%;object-fit:cover;object-position:center;
+      filter:contrast(1.02) saturate(1.05)}
+    .hero-overlay{position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.20) 40%,rgba(0,0,0,.70))}
     .hero-content{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end}
-    .hero-card{margin:0 0 54px;max-width:820px;background:rgba(18,18,20,.72);backdrop-filter:blur(6px);
-      border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px 28px 24px}
+    .hero-card{margin:0 0 54px;max-width:820px;background:rgba(18,18,20,.72);
+      backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;padding:28px 28px 24px}
     .eyebrow{font:700 12px/1 Inter;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
     h1{font-family:"Crimson Pro",serif;font-weight:700;font-size:44px;line-height:1.1;margin:10px 0 6px}
     .subtitle{color:var(--muted);max-width:60ch}
@@ -57,14 +68,15 @@
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
     .tile{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.06)}
-    .tile img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;aspect-ratio:1/1}
+    .tile img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;aspect-ratio:4/3}
     .tile.lg{grid-column:span 6}
     .tile.md{grid-column:span 4}
     .tile.sm{grid-column:span 3}
     .tile:hover::after{content:"View";position:absolute;inset:auto 12px 12px auto;background:rgba(0,0,0,.55);padding:6px 10px;border-radius:8px}
 
     /* Lightbox */
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:100}
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;
+      align-items:center;justify-content:center;z-index:100}
     .lightbox.open{display:flex}
     .lightbox img{max-width:min(92vw,1400px);max-height:86vh;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
 
@@ -82,9 +94,9 @@
       .hero{min-height:500px}
     }
 
-    /* Optional focal tweaks (adjust percents as you like) */
-    .img-focal-inlay   { object-position:60% 45% !important; }  /* nudge right/up */
-    .img-focal-buttcap { object-position:40% 60% !important; }  /* nudge left/down */
+    /* Optional focal tweaks */
+    .img-focal-inlay   { object-position:60% 45% !important; }
+    .img-focal-buttcap { object-position:40% 60% !important; }
   </style>
 </head>
 <body>
@@ -98,6 +110,7 @@
         <ul>
           <li><a class="active" href="#home">Heritage</a></li>
           <li><a href="#gallery">Cues</a></li>
+          <li><a href="our-story.html" rel="prefetch">Story</a></li>
           <li><a href="#waiting">Waiting&nbsp;List</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -109,13 +122,12 @@
   <!-- HERO -->
   <section id="home" class="hero" aria-label="McDaniel Cues showcase">
     <div class="slides" id="slides">
-      <!-- JS will populate images with best-match filenames -->
-      <figure class="slide active"><img alt="Ivory & silver inlay closeup on birdseye maple" class="img-focal-inlay" loading="eager" fetchpriority="high"/></figure>
-      <figure class="slide"><img alt="Gaboon ebony inlay detail" class="img-focal-inlay" loading="lazy"/></figure>
-      <figure class="slide"><img alt="Ebony & ivory rear sleeve" class="img-focal-buttcap" loading="lazy"/></figure>
-      <figure class="slide"><img alt="Alternate ebony & ivory rear design" class="img-focal-buttcap" loading="lazy"/></figure>
+      <figure class="slide active"><img src="assets/img/gallery-1-birdseye-ivory-silve.jpg" class="img-focal-inlay" alt="Ivory & silver inlay closeup"/></figure>
+      <figure class="slide"><img src="assets/img/gallery-2-gaboon-ebony-front.jpg" class="img-focal-inlay" alt="Gaboon ebony inlays"/></figure>
+      <figure class="slide"><img src="assets/img/gallery-3-ebony-ivory-rear.jpg" class="img-focal-buttcap" alt="Fancy rear sleeve"/></figure>
+      <figure class="slide"><img src="assets/img/gallery-4-ebony-ivory-rear-al.jpg" class="img-focal-buttcap" alt="Alternate rear design"/></figure>
     </div>
-    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="hero-card">
         <div class="eyebrow">Since 1971 • Jackson, Tennessee</div>
@@ -140,7 +152,7 @@
         <p>The result is more than equipment. It’s a signature — an heirloom that feels alive in the bridge hand and true on the stroke.</p>
       </div>
       <div class="panel">
-        <img id="heritage-photo" src="" alt="Workshop detail" style="width:100%;height:auto;border-radius:12px;display:block;object-fit:cover"/>
+        <img src="assets/img/bill-chase-shop.jpg" alt="Workshop detail" style="width:100%;height:auto;border-radius:12px;object-fit:cover"/>
       </div>
     </div>
   </section>
@@ -149,23 +161,26 @@
   <section id="gallery" class="container" aria-label="Cue Gallery">
     <h2 class="section-title">Selected Work</h2>
     <p class="section-sub">Photographed like fine jewelry. Tap to view full size.</p>
-    <div class="gallery" id="galleryGrid">
-      <!-- JS will populate four tiles matching hero set -->
+    <div class="gallery">
+      <a class="tile lg" href="assets/img/gallery-1-birdseye-ivory-silve.jpg"><img src="assets/img/gallery-1-birdseye-ivory-silve.jpg" class="img-focal-inlay" alt="Ivory & silver inlay"/></a>
+      <a class="tile lg" href="assets/img/gallery-2-gaboon-ebony-front.jpg"><img src="assets/img/gallery-2-gaboon-ebony-front.jpg" class="img-focal-inlay" alt="Gaboon ebony inlays"/></a>
+      <a class="tile md" href="assets/img/gallery-3-ebony-ivory-rear.jpg"><img src="assets/img/gallery-3-ebony-ivory-rear.jpg" class="img-focal-buttcap" alt="Ebony & ivory rear"/></a>
+      <a class="tile md" href="assets/img/gallery-4-ebony-ivory-rear-al.jpg"><img src="assets/img/gallery-4-ebony-ivory-rear-al.jpg" class="img-focal-buttcap" alt="Alternate rear design"/></a>
     </div>
   </section>
 
   <!-- Waiting List -->
-  <section id="waiting" class="container" aria-label="Waiting List">
+  <section id="waiting" class="container">
     <div class="panel cta-card">
       <span class="badge">Limited Production</span>
       <h2 class="section-title">Commission a McDaniel</h2>
       <p class="section-sub">We open a small number of commissions each year to maintain our standards. Share your intent and we’ll follow up personally.</p>
-      <a class="cta" href="mailto:info@mcdanielcues.com?subject=McDaniel%20Commission%20Inquiry">Request an Invitation</a>
+      <a class="cta" href="mailto:chase@mcdanielcues.com?subject=McDaniel%20Commission%20Inquiry">Request an Invitation</a>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="container" aria-label="Contact">
+  <section id="contact" class="container">
     <div class="panel">
       <h2 class="section-title">Contact</h2>
       <p class="section-sub">Jackson, Tennessee • By appointment only</p>
@@ -177,106 +192,10 @@
     <div class="container">© <span id="year"></span> McDaniel Cues • All Rights Reserved</div>
   </footer>
 
-  <!-- JS: pick best-match filenames, lightbox, slideshow, active nav -->
   <script>
-    // Utility: try a list of candidate paths and resolve to the first that loads
-    function pickFirstThatLoads(candidates){
-      return new Promise(resolve=>{
-        let i=0;
-        const tryNext=()=>{
-          if(i>=candidates.length){ resolve(candidates[candidates.length-1]); return; }
-          const img=new Image();
-          img.onload=()=>resolve(candidates[i]);
-          img.onerror=()=>{ i++; tryNext(); };
-          img.src=candidates[i];
-        };
-        tryNext();
-      });
-    }
-
-    // Candidate sets based on your folder screenshot (with safe fallbacks)
-    const heroCandidates = [
-      // 1
-      ["assets/img/gallery-1-birdseye-ivory-silve.jpg",
-       "assets/img/gallery-1-birdseye-ivory-silver.jpg",
-       "assets/img/ph-1.jpg"],
-      // 2
-      ["assets/img/gallery-2-gaboon-ebony-front.jpg",
-       "assets/img/ph-2.jpg"],
-      // 3
-      ["assets/img/gallery-3-ebony-ivory-rear.jpg",
-       "assets/img/ph-3.jpg"],
-      // 4
-      ["assets/img/gallery-4-ebony-ivory-rear-al.jpg",
-       "assets/img/gallery-4-ebony-ivory-rear-alt.jpg",
-       "assets/img/ph-4.jpg"]
-    ];
-
-    // Populate hero images
-    const heroImgs = [...document.querySelectorAll('.slides img')];
-    Promise.all(heroCandidates.map(pickFirstThatLoads)).then(paths=>{
-      paths.forEach((src,idx)=>{ heroImgs[idx].src = src; });
-    });
-
-    // Heritage panel photo (use #2 detail or fallback to shop image)
-    pickFirstThatLoads([
-      "assets/img/gallery-2-gaboon-ebony-front.jpg",
-      "assets/img/bill-chase-shop.jpg",
-      "assets/img/ph-2.jpg"
-    ]).then(src=>{
-      const el = document.getElementById('heritage-photo');
-      el.src = src;
-    });
-
-    // Build gallery tiles from the same 4 images
-    const gallery = document.getElementById('galleryGrid');
-    Promise.all(heroCandidates.map(pickFirstThatLoads)).then(paths=>{
-      const sizes = ["lg","md","md","sm"];
-      const alts  = [
-        "Ivory & silver inlay closeup",
-        "Gaboon ebony inlays",
-        "Fancy rear sleeve",
-        "Alternate rear design"
-      ];
-      paths.forEach((src,i)=>{
-        const a = document.createElement('a');
-        a.className = `tile ${sizes[i]}`;
-        a.href = src;
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = alts[i];
-        // mirror hero focal classes
-        img.className = (i<2) ? "img-focal-inlay" : "img-focal-buttcap";
-        a.appendChild(img);
-        gallery.appendChild(a);
-      });
-    });
-
-    // Lightbox
-    const lb = document.createElement('div'); lb.className='lightbox'; lb.innerHTML='<img alt=""/>';
-    document.body.appendChild(lb);
-    const lbImg = lb.querySelector('img');
-    lb.addEventListener('click',()=>lb.classList.remove('open'));
-    document.getElementById('galleryGrid').addEventListener('click',e=>{
-      const a = e.target.closest('a'); if(!a) return; e.preventDefault();
-      lbImg.src = a.href; lb.classList.add('open');
-    });
-
-    // Slideshow
-    const slides = [...document.querySelectorAll('.slide')];
-    let i = 0; setInterval(()=>{
-      slides[i].classList.remove('active'); i = (i+1) % slides.length; slides[i].classList.add('active');
-    }, 5200);
-
-    // Active nav on scroll
-    const links = [...document.querySelectorAll('nav a')];
-    const sections = links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
-    const activate = id => links.forEach(a => a.classList.toggle('active', a.getAttribute('href')===`#${id}`));
-    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) activate(e.target.id); })},{threshold:.6});
-    sections.forEach(s=>io.observe(s));
-
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+    const slides = [...document.querySelectorAll('.slide')];
+    let i = 0; setInterval(()=>{slides[i].classList.remove('active');i=(i+1)%slides.length;slides[i].classList.add('active')},5200);
   </script>
 </body>
 </html>
