@@ -11,6 +11,8 @@
     html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--grid);margin:0 auto;padding:0 20px}
+
+    /* Shared header/nav (matches index.html) */
     header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);
       background:linear-gradient(180deg,rgba(11,11,12,.9),rgba(11,11,12,.6));border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -21,15 +23,20 @@
     nav a:hover,nav a.active{border-color:var(--accent);opacity:1}
     nav a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
     .cta{padding:10px 16px;border-radius:999px;background:var(--accent);color:#121214;font-weight:700}
+
+    /* Page layout */
     main{padding:80px 0}
-    h1,h2{font-family:"Crimson Pro",serif}
+    h1,h2,h3{font-family:"Crimson Pro",serif}
     .lede{color:var(--muted);max-width:70ch;margin-top:6px}
-    .story{display:grid;grid-template-columns:1fr 420px;gap:36px;margin-top:28px}
-    .story p{max-width:70ch;line-height:1.7;margin:0 0 1.1em;color:#cfcfcf}
-    .aside{background:var(--bg-soft);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:20px}
-    .aside img{width:100%;height:auto;border-radius:12px;object-fit:cover}
+    .section{margin-top:36px}
+    .twocol{display:grid;grid-template-columns:1fr 420px;gap:36px}
+    .section p{max-width:75ch;line-height:1.7;color:#cfcfcf}
+    .panel{background:var(--bg-soft);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
+    figure{margin:0}
+    figure img{width:100%;height:auto;border-radius:12px;object-fit:cover}
+    figcaption{color:#cfcfcf;font-size:14px;margin-top:10px}
+    @media (max-width:980px){.twocol{grid-template-columns:1fr}}
     footer{padding:36px 0;color:#cfcfcf;border-top:1px solid rgba(255,255,255,.06)}
-    @media (max-width:980px){.story{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -54,26 +61,45 @@
 
   <main>
     <div class="container">
+
       <h1>Our Story</h1>
-      <p class="lede">A McDaniel cue is not purchased — it is commissioned. Since 1971, Bill McDaniel has built every piece with heirloom intent: hand-selected woods, surgical tolerances, and a finish meant to last decades of play.</p>
+      <p class="lede">A McDaniel cue is not purchased — it is commissioned. What began as one maker’s pursuit of the perfect hit has grown into a lineage of craftsmanship rooted in Jackson, Tennessee.</p>
 
-      <div class="story">
-        <div>
-          <!-- Replace this body with the long-form story text you wrote earlier if you prefer -->
-          <p>From Jackson, Tennessee, Bill’s shop has produced cues for world champions and private collectors alike. Each billet of birdseye maple or gaboon ebony is seasoned and selected for stability. Silver and ivory inlays are set like jewelry — not just for beauty, but to balance the cue’s dynamics in the player’s hand.</p>
-          <p>Every taper is measured to the thousandth. Ferrules are turned true. The finish is cured and hand-polished until the cue feels alive on the bridge and true on the stroke. Production remains finite by design — protecting the standard that made McDaniel a name of record among cue makers.</p>
-          <p>We operate with a waiting list not to create hype, but to respect the pace of excellence. If an instrument will carry your name for a lifetime, it deserves a maker’s patience.</p>
-          <h2>Lineage & Legacy</h2>
-          <p>What distinguishes a McDaniel cue is not a single feature, but the sum of decisions: wood with soul, geometry with discipline, and finishes that age with grace. The result is equipment that disappears in the player’s hands — leaving only feel, focus, and confidence.</p>
-          <p>For collectors, provenance matters. Each commission is documented and delivered with care, not as inventory but as a signature. Many of our cues live in private collections and return only for cleaning or to be admired under light — which suits us just fine.</p>
+      <!-- Origins -->
+      <section class="section">
+        <h2>Early Years</h2>
+        <p>Bill McDaniel grew up around the game of pool. His family owned McDaniel Amusements, a vending company with many pool tables across Bill’s hometown of Jackson, Tennessee. Bill often accompanied his father to service tables and machines; while his father worked, Bill played. He was so small when he started that he stood on pop-bottle crates to reach the table. By the 1960s and early 1970s he was a top local player and a tournament regular.</p>
+        <p>As a competitor, Bill paid close attention to what others were shooting with. He befriended cue makers of the era and owned virtually every type of cue available, yet none fully matched what he was after. Determined to master the craft and build the perfect cue, Bill continued his education, earned a business degree, and—when astigmatism affected his eyesight—turned his focus from playing to making.</p>
+      </section>
+
+      <section class="section">
+        <h2>Mentors, Marks & Methods</h2>
+        <p>Through several phone conversations, George Balabushka offered guidance that helped Bill start in the right direction. Bill later became friends with Tim Scruggs and eventually a partner in Tim’s shop. Early McDaniel cues, inspired by Balabushka’s work, were short-splice four-pointers with veneers and no marks. Soon Bill originated a shark logo and a stylized “MC” logo—both used through most of his career until his retirement in 2005. On request, he also hand-signed special cues.</p>
+        <p>Bill has always favored the classic 5/16-14 piloted joint—just as Balabushka used. In 1993 he invented a shock-absorbing ring placed under stainless-steel joints so the wood doesn’t touch the steel, producing a feel he believes rivals ivory. He also offers a 3/8-11 flat-faced joint in steel, phenolic, and ivory.</p>
+        <p>In 1994 Bill adopted CNC—making him an early adopter among cue makers—and continued refining process and design throughout the late 1990s and early 2000s. Health challenges in the mid-2000s and an opportunity to sell his shop led to a 12-year retirement, though cues never left his thoughts.</p>
+      </section>
+
+      <!-- The Rebirth with photo -->
+      <section class="section">
+        <h2>The Rebirth</h2>
+        <div class="twocol">
+          <div>
+            <p>Chase Channell, a West Virginia native who grew up competing in pool, recognized that the financial upside of becoming a top player wasn’t his path. An entrepreneur from a young age, he became a retail paint and sundries supplier at 18, then chose retail automotive as a career at 20 in Atlanta. He advanced quickly—sales consultant to finance manager, finance director, used car manager, general sales manager—and at 25 was named General Manager of Rick Case Kia Duluth. In 2015 he relocated to Jackson, Tennessee to join Victory Automotive Group as General Manager.</p>
+            <p>Though business took center stage, Chase’s love for cues never faded. He collected widely, always chasing what truly “played” the best—often hitting a single ball with a cue and selling it immediately if it wasn’t right. He knew legendary cue maker Bill McDaniel was from Jackson, but an online search mistakenly suggested Bill had passed away. Eventually Chase learned that another “Bill McDaniel” from Jackson had been confused with the maker.</p>
+            <p>During a live radio remote at the dealership, Chase mentioned that many locals didn’t realize one of the best cue makers in the world lived right there in Jackson. He asked listeners for an introduction. As luck had it, a local called in—Bill would meet for lunch at Logan’s. On <strong>December 14, 2016</strong>, Bill and Chase met for the first time and immediately struck up a friendship over cues and the game of billiards. Over the next few years they played one-pocket, shared dinners and laughs, and kept discussing what makes a cue a true “billiard instrument.”</p>
+            <p>Chase had grown up woodworking with his grandfather, Harry Kepner, a wood pattern maker for the Kelly Foundry in Elkins, WV for over 50 years. Curiosity for the perfect cue, a passion for woodworking, and a friendship with a master maker proved the perfect recipe to return to building. In the fall of 2019 they purchased their first lathe and began the quest to bring the best cues in the world back to the billiard community.</p>
+            <p>Much of that journey is shared in the Facebook group <em>Bill McDaniel Custom Cue</em>, moderated by Bill and Chase. We invite you to follow along there—and here on <strong>mcdanielcues.com</strong>.</p>
+          </div>
+          <aside class="panel">
+            <figure>
+              <img src="assets/img/bill-chase-first-meeting.jpg" alt="Bill McDaniel and Chase Channell — first meeting">
+              <figcaption>Bill &amp; Chase — first meeting, Logan’s (Jackson, TN), December 14, 2016.</figcaption>
+            </figure>
+          </aside>
         </div>
-        <aside class="aside">
-          <img src="assets/img/bill-chase-shop.jpg" alt="Inside the McDaniel workshop">
-          <div style="margin-top:12px;color:#cfcfcf">Inside the McDaniel workshop — Jackson, Tennessee.</div>
-        </aside>
-      </div>
+      </section>
 
-      <div style="margin-top:32px">
+      <div class="section" style="margin-top:24px">
         <a class="cta" href="index.html#waiting">Join the Waiting List</a>
       </div>
     </div>
@@ -83,7 +109,9 @@
     <div class="container">© <span id="year"></span> McDaniel Cues • All Rights Reserved</div>
   </footer>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
 
