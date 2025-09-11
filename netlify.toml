@@ -1,0 +1,2 @@
+[build]
+publish = "mcdaniel-billiards-v15"  # or "/" if you later flatten to root
