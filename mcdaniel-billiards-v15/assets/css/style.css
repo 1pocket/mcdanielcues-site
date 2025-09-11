@@ -167,6 +167,46 @@ footer{background:#14110f;border-top:1px solid rgba(176,130,44,.2); padding:24px
   .site-header nav a{margin:0}
   .site-header .nav-btn{flex:1 1 48%; text-align:center}
 }
+/* ===== Unified Header Nav Links ===== */
+.site-header nav {
+  display:flex; flex-wrap:wrap; gap:8px;
+}
+
+.site-header nav a {
+  padding:.45rem .9rem;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  font-weight:500;
+  background:transparent;
+  transition:background .15s ease,border-color .15s ease,color .15s ease;
+}
+
+/* Hover + active states */
+.site-header nav a:hover {
+  background:rgba(176,130,44,.12);
+  border-color:rgba(176,130,44,.3);
+  color:var(--ink);
+}
+.site-header nav a.is-active {
+  background:rgba(176,130,44,.18);
+  border-color:rgba(176,130,44,.4);
+  color:var(--ink);
+}
+
+/* Ensure the two special buttons match size/spacing */
+.site-header .nav-btn {
+  margin-left:0;
+  border:1px solid rgba(176,130,44,.35);
+  background:rgba(176,130,44,.1);
+  color:var(--ink);
+}
+.site-header .nav-btn:hover {
+  background:rgba(176,130,44,.2);
+  border-color:rgba(176,130,44,.55);
+}
 
 
 
