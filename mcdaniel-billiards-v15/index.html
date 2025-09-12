@@ -45,26 +45,75 @@
   </section>
 
   <!-- Featured Gallery -->
-  <section id="gallery" class="featured container" aria-label="Featured Cues">
-    <h2>Featured Cues</h2>
-    <div class="grid">
-      <figure class="card">
-        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_butt.jpg" alt="ZAM Ebony &amp; BEM Lazy Z — butt detail" loading="lazy" width="800" height="533">
-      </figure>
+<section id="gallery" class="featured container" aria-label="Featured Cues">
+  <h2>Featured Cues</h2>
 
-      <figure class="card">
-        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt="Lazy Z — points detail" loading="lazy" width="800" height="533">
-      </figure>
+  <div class="cue-grid">
+    <!-- Cue 1 -->
+    <article class="cue-card" data-gallery="zam-bem">
+      <h3 class="cue-title">ZAM Ebony &amp; BEM — Lazy Z</h3>
 
-      <figure class="card">
-        <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt="BEM &amp; Ebony Lazy Z — rear" loading="lazy" width="800" height="533">
-      </figure>
+      <button class="cue-main" data-index="0" aria-label="Open gallery: ZAM Ebony &amp; BEM">
+        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_whole.jpg" alt="ZAM Ebony &amp; BEM, whole cue">
+      </button>
 
-      <figure class="card">
-        <img src="assets/img/mcdaniel_cues_all/cue7_plain_ebony/plain_ebony_ring.jpg" alt="Plain Ebony — ring detail" loading="lazy" width="800" height="533">
-      </figure>
-    </div>
-  </section>
+      <div class="cue-thumbs">
+        <button data-index="1" aria-label="ZAM Ebony &amp; BEM — butt detail">
+          <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_butt.jpg" alt="">
+        </button>
+        <button data-index="2" aria-label="ZAM Ebony &amp; BEM — points detail">
+          <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt="">
+        </button>
+        <button data-index="3" aria-label="ZAM Ebony &amp; BEM — rear">
+          <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt="">
+        </button>
+        <button data-index="4" aria-label="Plain Ebony — ring detail">
+          <img src="assets/img/mcdaniel_cues_all/cue7_plain_ebony/plain_ebony_ring.jpg" alt="">
+        </button>
+      </div>
+
+      <!-- Supply the lightbox image list here; first is the main -->
+      <template class="cue-images">
+        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_whole.jpg" alt="ZAM Ebony &amp; BEM, whole cue">
+        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_butt.jpg" alt="ZAM Ebony &amp; BEM — butt detail">
+        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt="ZAM Ebony &amp; BEM — points detail">
+        <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt="BEM &amp; Ebony — rear">
+        <img src="assets/img/mcdaniel_cues_all/cue7_plain_ebony/plain_ebony_ring.jpg" alt="Plain Ebony — ring detail">
+      </template>
+    </article>
+
+    <!-- Cue 2 (example; swap images/titles) -->
+    <article class="cue-card" data-gallery="bem-ebony">
+      <h3 class="cue-title">BEM &amp; Ebony — Lazy Z</h3>
+
+      <button class="cue-main" data-index="0" aria-label="Open gallery: BEM &amp; Ebony">
+        <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_whole.jpg" alt="BEM &amp; Ebony, whole cue">
+      </button>
+
+      <div class="cue-thumbs">
+        <button data-index="1"><img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt=""></button>
+        <button data-index="2"><img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt=""></button>
+        <button data-index="3"><img src="assets/img/mcdaniel_cues_all/cue7_plain_ebony/plain_ebony_ring.jpg" alt=""></button>
+      </div>
+
+      <template class="cue-images">
+        <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_whole.jpg" alt="BEM &amp; Ebony, whole cue">
+        <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt="BEM &amp; Ebony — rear">
+        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt="Lazy Z — points detail">
+        <img src="assets/img/mcdaniel_cues_all/cue7_plain_ebony/plain_ebony_ring.jpg" alt="Plain Ebony — ring detail">
+      </template>
+    </article>
+  </div>
+</section>
+
+<!-- Lightbox (one per page) -->
+<div id="lightbox" class="lb" hidden aria-modal="true" role="dialog">
+  <button class="lb-close" aria-label="Close">×</button>
+  <button class="lb-prev" aria-label="Previous">‹</button>
+  <img class="lb-img" alt="">
+  <button class="lb-next" aria-label="Next">›</button>
+</div>
+
 
   <!-- Our Story -->
   <section id="story" class="container heritage" aria-label="Our Story">
