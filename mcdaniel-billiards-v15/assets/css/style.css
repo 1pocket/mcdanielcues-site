@@ -10,173 +10,11 @@
   --link-hover:#dcd6c7;
 }
 
-/* Type (Crimson Pro for classic serif; Inter already included) */
-body{color:var(--ink); background:var(--bg);}
-.brandline{
-  font-family:"Crimson Pro", serif;
-  font-variant:small-caps;
-  letter-spacing:.12em;
-  font-weight:600;
-  line-height:1;
-  color:var(--ink);
-  opacity:.95;
-}
-.crest{width:40px;height:40px;border-radius:999px;filter:drop-shadow(0 0 0 / 0);}
+/* ===== Base / Typography ===== */
+body{margin:0;color:var(--ink);background:var(--bg);font-family:Inter,system-ui,Arial,sans-serif;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* Header / Nav */
-.site-header{
-  position:sticky;top:0;z-index:20;
-  background:rgba(11,11,11,.82);
-  backdrop-filter:saturate(140%) blur(8px);
-  border-bottom:1px solid #1f1f1f;
-}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0}
-.primary-nav{display:flex;gap:22px;align-items:center}
-.primary-nav a{
-  display:inline-block;
-  padding:10px 12px;
-  font-weight:600;
-  color:var(--link);
-  text-decoration:none;
-  border-radius:999px;
-  line-height:1;
-  transition:transform .12s ease, background-color .12s ease, color .12s ease, opacity .12s ease;
-  opacity:.95;
-}
-.primary-nav a:hover{background:#171717; opacity:1; transform:translateY(-1px)}
-.primary-nav a:focus-visible{outline:2px solid var(--brass); outline-offset:3px}
-
-/* HERO */
-.hero{
-  position:relative; isolation:isolate;
-  min-height:clamp(520px, 72vh, 860px); /* big enough to showcase the cue */
-  display:grid; place-items:center;
-}
-.hero-media{
-  position:absolute; inset:0; z-index:-1;
-  background:
-    radial-gradient(1200px 600px at 70% 20%, rgba(0,0,0,.25), rgba(0,0,0,.75)),
-    url("assets/img/hero/ cue-hero.jpg") center/cover no-repeat; /* <-- set your file */
-  filter:saturate(110%) contrast(1.05);
-}
-.hero::after{ /* subtle leather grain overlay */
-  content:"";
-  position:absolute; inset:0; z-index:-1;
-  background-image:url("assets/img/texture/leather-grain.png"); /* optional */
-  opacity:.08; mix-blend-mode:overlay; pointer-events:none;
-}
-.hero-copy{max-width:980px; text-align:center; padding:80px 20px}
-.overline{
-  font-family:"Crimson Pro", serif;
-  font-variant:small-caps;
-  letter-spacing:.22em;
-  color:var(--muted);
-  margin:0 0 10px;
-  opacity:.95;
-}
-.hero h1{
-  font-family:"Crimson Pro", serif;
-  font-weight:600;
-  font-size:clamp(34px, 5vw, 56px);
-  letter-spacing:.01em;
-  margin:0 0 10px;
-}
-.hero .sub{
-  color:var(--muted);
-  font-size:clamp(16px, 1.7vw, 18px);
-  margin:0 auto 24px;
-  max-width:820px;
-}
-
-/* Buttons */
-.btn{
-  display:inline-block; border-radius:999px;
-  padding:12px 18px; font-weight:700; text-decoration:none;
-  transition:transform .12s ease, box-shadow .12s ease, background-color .12s ease, color .12s ease;
-  border:1px solid transparent;
-}
-.btn-brass{background:var(--brass); color:var(--brass-ink)}
-.btn-brass:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(179,147,90,.25)}
-.btn-ghost{border-color:#2a2a2a; color:var(--ink); background:transparent}
-.btn-ghost:hover{background:#191919}
-
-.cta-row{display:flex; gap:12px; justify-content:center}
-
-/* Sections (IDs from the new nav) */
-section[id]{scroll-margin-top:96px} /* ensures anchor links land neatly under sticky header */
-
-
-
-/* Buttons */
-.btn{display:inline-block;background:#fff;color:#000;padding:10px 16px;border-radius:999px;font-weight:700;text-decoration:none}
-.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
-
-/* Headings */
-.gallery h2,.heritage h2,.commission h2{
-  font-family:'Crimson Pro',serif;font-size:30px;margin:28px 0 14px
-}
-
-/* Gallery grid */
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card{
-  background:var(--panel);border:1px solid #1f1f1f;border-radius:16px;overflow:hidden;
-  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-.card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.25);border-color:#2a2a2a}
-.card img{width:100%;aspect-ratio:3/2;object-fit:cover}
-.card figcaption{padding:10px 12px;color:#e4e4e4}
-
-.cta-row{display:flex;gap:12px;justify-content:center;margin:22px 0 0}
-
-/* Story / Heritage layout */
-.two-col{
-  display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;
-  background:var(--panel);border:1px solid #1f1f1f;padding:20px;border-radius:16px
-}
-.quote{
-  font-family:'Crimson Pro',serif;font-size:22px;line-height:1.4;color:#ddd;
-  background:#0e0e0e;padding:16px;border-left:3px solid #fff;border-radius:8px
-}
-
-.commission{margin:26px auto 40px;text-align:center}
-
-/* Footer */
-.footer{background:#0e0e0e;padding:26px 0;border-top:1px solid #1f1f1f;margin-top:30px}
-.foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.legal{opacity:.7;text-align:center;margin-top:10px;color:#bbb}
-
-/* Responsive */
-@media (max-width:900px){
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .two-col{grid-template-columns:1fr}
-  .hero img{height:48vh}
-}
-/* HERO fallback background (shows behind the sliding images) */
-.hero::before{
-  content:"";
-  position:absolute; inset:0; z-index:0;
-  background: url('../img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_whole.jpg') center/cover no-repeat;
-  filter: contrast(1.05);
-}
-.hero-track{ position: relative; z-index:1; } /* slider above bg */
-.hero-overlay{ position: relative; z-index:2; } /* text above slider */
-
-}
-.hero-overlay{ position:relative; z-index:1 }
-/* If you’re not rotating images yet, you can temporarily hide the track */
-.hero-track{ display:none; }
-/* Make cards “just work” if thumbnails vary */
-.card img{ width:100%; aspect-ratio:3/2; object-fit:cover; }
-
-/* Ensure overlay doesn’t collide on small screens */
-@media (max-width:900px){
-  .grid{ grid-template-columns:repeat(2,1fr) }
-  .hero img{ height:48vh }
-  .hero{ min-height:48vh }
-}
-/* ===== Custom refinements: Hero + Nav polish (Sept 2025) ===== */
-
-/* --- Brandline (H&H vibe) --- */
+.brand{display:flex;align-items:center;gap:10px}
 .brandline{
   font-family:"Crimson Pro", serif;
   font-variant:small-caps;
@@ -186,44 +24,84 @@ section[id]{scroll-margin-top:96px} /* ensures anchor links land neatly under st
   color:var(--ink);
   opacity:.95;
 }
+.crest{width:40px;height:40px;display:block;object-fit:contain;border-radius:50%}
 
-/* --- Nav polish --- */
+/* ===== Header / Nav ===== */
+.site-header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(11,11,11,.82);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid #1f1f1f;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0}
 .primary-nav{display:flex;gap:26px;align-items:center}
 .primary-nav a{
   display:inline-block;
   padding:10px 14px;
   font-weight:600;
-  color:var(--ink);
+  color:var(--link);
   text-decoration:none;
   border-radius:999px;
   line-height:1;
   opacity:.95;
   transition:background-color .12s ease, transform .12s ease, opacity .12s ease;
 }
-.primary-nav a:hover{background:#171717; opacity:1; transform:translateY(-1px)}
-.primary-nav a:focus-visible{outline:2px solid var(--brass); outline-offset:3px}
+.primary-nav a:hover{background:#171717;opacity:1;transform:translateY(-1px)}
+.primary-nav a:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
 
-/* --- Bigger hero + stronger scrim for legibility --- */
+/* ===== HERO — slider + vignette + ken burns ===== */
 .hero{
   position:relative; isolation:isolate;
-  min-height:clamp(560px, 76vh, 900px); /* taller */
+  min-height:clamp(560px,76vh,900px);
   display:grid; place-items:center;
-}
-.hero-media{
-  position:absolute; inset:0; z-index:-2;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.55) 30%, rgba(0,0,0,.62) 60%, rgba(0,0,0,.68) 100%),
-    url("assets/img/hero/cue-hero.jpg") center 45%/cover no-repeat; /* adjust focal point with object-position */
-  filter:saturate(108%) contrast(1.05);
-}
-/* optional fine vignette */
-.hero::before{
-  content:""; position:absolute; inset:0; z-index:-1;
-  background:radial-gradient(1200px 600px at 55% 40%, rgba(0,0,0,.00), rgba(0,0,0,.25) 60%, rgba(0,0,0,.45) 100%);
-  pointer-events:none;
+  overflow:hidden;
 }
 
-.hero-copy{max-width:980px; text-align:center; padding:88px 20px}
+/* Vignette only (no photo here) */
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:radial-gradient(1100px 560px at 55% 38%,
+    rgba(0,0,0,0), rgba(0,0,0,.26) 62%, rgba(0,0,0,.44) 100%);
+}
+
+/* Slides layer */
+.hero-slides{position:absolute; inset:0; z-index:-2}
+.slide{
+  position:absolute; inset:0; opacity:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.42) 0%,
+                                       rgba(0,0,0,.58) 55%,
+                                       rgba(0,0,0,.68) 100%);
+  animation:heroFade 24s infinite; /* 3 slides × ~8s each */
+  will-change:opacity;
+}
+/* Photo goes on ::after so we can pan/zoom smoothly */
+.slide::after{
+  content:""; position:absolute; inset:0;
+  background:var(--img) center 45% / cover no-repeat;
+  animation:panZoom 24s infinite;
+  will-change:transform;
+}
+
+/* 3-slide timing */
+.slide:nth-child(1){animation-delay:0s}     .slide:nth-child(1)::after{animation-delay:0s}
+.slide:nth-child(2){animation-delay:8s}     .slide:nth-child(2)::after{animation-delay:8s}
+.slide:nth-child(3){animation-delay:16s}    .slide:nth-child(3)::after{animation-delay:16s}
+
+@keyframes heroFade{
+  0%{opacity:0}
+  5%{opacity:1}
+  30%{opacity:1}
+  33%{opacity:0}
+  100%{opacity:0}
+}
+@keyframes panZoom{
+  0%  { transform: scale(1.03) translate3d(-1%,0,0) }
+  30% { transform: scale(1.06) translate3d( 1%,0,0) }
+  100%{ transform: scale(1.06) translate3d( 1%,0,0) }
+}
+
+/* Hero copy */
+.hero-copy{max-width:980px;text-align:center;padding:88px 20px}
 .overline{
   font-family:"Crimson Pro", serif;
   font-variant:small-caps;
@@ -235,81 +113,66 @@ section[id]{scroll-margin-top:96px} /* ensures anchor links land neatly under st
 .hero h1{
   font-family:"Crimson Pro", serif;
   font-weight:600;
-  font-size:clamp(36px, 5vw, 60px);
+  font-size:clamp(36px,5vw,60px);
   letter-spacing:.01em;
   margin:0 0 12px;
   text-shadow:0 2px 8px rgba(0,0,0,.45);
 }
 .hero .sub{
   color:var(--muted);
-  font-size:clamp(16px, 1.7vw, 18px);
+  font-size:clamp(16px,1.7vw,18px);
   margin:0 auto 26px;
   max-width:820px;
   text-shadow:0 1px 6px rgba(0,0,0,.35);
 }
 
-/* Buttons */
-.btn{border:1px solid transparent; border-radius:999px; padding:12px 18px; font-weight:700; text-decoration:none; transition:transform .12s ease, box-shadow .12s ease, background-color .12s ease, color .12s ease}
+/* Reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .slide,.slide::after{animation:none}
+  .slide:nth-child(1){opacity:1}
+}
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-block; border:1px solid transparent;
+  border-radius:999px; padding:12px 18px;
+  font-weight:700; text-decoration:none;
+  transition:transform .12s, box-shadow .12s, background-color .12s, color .12s;
+}
 .btn-brass{background:var(--brass); color:var(--brass-ink)}
 .btn-brass:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(179,147,90,.25)}
 .btn-ghost{border-color:#2a2a2a; color:var(--ink); background:transparent}
 .btn-ghost:hover{background:#191919}
+.cta-row{display:flex;gap:12px;justify-content:center}
 
-.cta-row{display:flex; gap:12px; justify-content:center}
-
-/* Anchor offsets under sticky header */
+/* Anchor offset for sticky header */
 section[id]{scroll-margin-top:96px}
 
-/* Mobile tweaks */
-@media (max-width: 820px){
-  .primary-nav{gap:8px; flex-wrap:wrap; justify-content:flex-end}
-  .primary-nav a{padding:8px 10px}
-  .hero{min-height:64vh}
+/* ===== Gallery cards ===== */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{
+  background:var(--panel);border:1px solid #1f1f1f;border-radius:16px;overflow:hidden;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-/* ===== McDaniel polish (hero + nav + brand) ===== */
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.25);border-color:#2a2a2a}
+.card img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.card figcaption{padding:10px 12px;color:#e4e4e4}
 
-/* Brand line: small-caps, letter-spaced, H&H vibe */
-.brandline{font-family:"Crimson Pro",serif;font-variant:small-caps;letter-spacing:.14em;font-weight:600;opacity:.95}
-
-/* Nav: consistent pill tabs + hover */
-.primary-nav{display:flex;gap:26px;align-items:center}
-.primary-nav a{display:inline-block;padding:10px 14px;font-weight:600;color:var(--ink);text-decoration:none;border-radius:999px;line-height:1;opacity:.95;transition:background-color .12s,transform .12s,opacity .12s}
-.primary-nav a:hover{background:#171717;opacity:1;transform:translateY(-1px)}
-.primary-nav a:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
-
-/* Hero: taller + stronger scrim so the lines read clearly */
-.hero{position:relative;isolation:isolate;min-height:clamp(560px,76vh,900px);display:grid;place-items:center}
-.hero-media{position:absolute;inset:0;z-index:-2;
-  background:
-    linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.6) 55%,rgba(0,0,0,.7) 100%),
-    url("assets/img/hero/cue-hero.jpg") center 45%/cover no-repeat;
-  filter:saturate(108%) contrast(1.05);
+/* ===== Story / Heritage layout ===== */
+.two-col{
+  display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;
+  background:var(--panel);border:1px solid #1f1f1f;padding:20px;border-radius:16px
 }
-/* Optional gentle vignette for luxe depth */
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;
-  background:radial-gradient(1200px 600px at 55% 40%,rgba(0,0,0,0),rgba(0,0,0,.28) 65%,rgba(0,0,0,.45) 100%)}
-
-/* Hero copy sizing + subtle text-shadow for leather background */
-.hero-copy{max-width:980px;text-align:center;padding:88px 20px}
-.overline{font-family:"Crimson Pro",serif;font-variant:small-caps;letter-spacing:.22em;color:var(--muted);margin:0 0 12px;text-shadow:0 1px 0 rgba(0,0,0,.5)}
-.hero h1{font-family:"Crimson Pro",serif;font-weight:600;font-size:clamp(36px,5vw,60px);margin:0 0 12px;text-shadow:0 2px 8px rgba(0,0,0,.45)}
-.hero .sub{color:var(--muted);font-size:clamp(16px,1.7vw,18px);margin:0 auto 26px;max-width:820px;text-shadow:0 1px 6px rgba(0,0,0,.35)}
-
-.btn{border:1px solid transparent;border-radius:999px;padding:12px 18px;font-weight:700;text-decoration:none;transition:transform .12s,box-shadow .12s,background-color .12s,color .12s}
-.btn-brass{background:var(--brass);color:var(--brass-ink)}
-.btn-brass:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(179,147,90,.25)}
-.btn-ghost{border-color:#2a2a2a;color:var(--ink);background:transparent}
-.btn-ghost:hover{background:#191919}
-
-/* Make anchor jumps land nicely under sticky header */
-section[id]{scroll-margin-top:96px}
-
-/* Mobile tidy */
-@media (max-width:820px){
-  .primary-nav{gap:8px;flex-wrap:wrap;justify-content:flex-end}
-  .primary-nav a{padding:8px 10px}
-  .hero{min-height:64vh}
+.quote{
+  font-family:"Crimson Pro",serif;font-size:22px;line-height:1.4;color:#ddd;
+  background:#0e0e0e;padding:16px;border-left:3px solid #fff;border-radius:8px
 }
+
+/* ===== Footer ===== */
+.footer{background:#0e0e0e;padding:26px 0;border-top:1px solid #1f1f1f;margin-top:30px}
+.foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.legal{opacity:.7;text-align:center;margin-top:10px;color:#bbb}
+
 /* ===== Meet Our Team ===== */
 .section{padding:72px 0}
 .section-head{text-align:center;margin-bottom:28px}
@@ -327,7 +190,6 @@ section[id]{scroll-margin-top:96px}
   grid-template-columns:repeat(12,minmax(0,1fr));
   gap:22px;
 }
-
 .member{
   grid-column:span 6;
   background:var(--panel);
@@ -336,14 +198,18 @@ section[id]{scroll-margin-top:96px}
   overflow:hidden;
   display:grid;
   grid-template-rows:auto 1fr;
+  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
-
+.member:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(0,0,0,.25);
+  border-color:#262626;
+}
 .portrait{
-  width:100%; height:auto; display:block;
+  width:100%; display:block;
   aspect-ratio:4/5; object-fit:cover; object-position:center;
   filter:saturate(102%) contrast(1.03);
 }
-
 .member-body{padding:16px 16px 18px}
 .name{
   font-family:"Crimson Pro", serif;
@@ -359,194 +225,18 @@ section[id]{scroll-margin-top:96px}
 }
 .bio{color:var(--muted);margin:0}
 
-@media (max-width: 960px){
-  .member{grid-column:span 12}
+/* ===== Responsive ===== */
+@media (max-width:1100px){
+  .grid{grid-template-columns:repeat(3,1fr)}
 }
-
-/* subtle hover lift */
-.member{transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease}
-.member:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 28px rgba(0,0,0,.25);
-  border-color:#262626;
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .two-col{grid-template-columns:1fr}
+  .hero{min-height:64vh}
 }
-/* MC badge sizing + alignment */
-.brand{display:flex;align-items:center;gap:10px}
-.crest{
-  width:40px;height:40px;display:block;object-fit:contain;
-  border-radius:50%;
-  image-rendering:auto;
-  filter:none; /* ensure no accidental invert/filter */
-}
-/* HERO base (keep your existing hero sizing if you like) */
-.hero{position:relative;isolation:isolate;min-height:clamp(560px,76vh,900px);display:grid;place-items:center;overflow:hidden}
-
-/* Slides layer */
-.hero-slides{position:absolute;inset:0;z-index:-2}
-.slide{
-  position:absolute;inset:0;opacity:0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
-    var(--img) center 45%/cover no-repeat;
-  animation: heroFade 16s infinite;
-  filter:saturate(108%) contrast(1.05);
-}
-
-/* First slide shows immediately */
-.slide:nth-child(1){animation-delay:0s; opacity:1}
-.slide:nth-child(2){animation-delay:8s}
-
-/* Elegant cross-fade */
-@keyframes heroFade{
-  0%{opacity:0}
-  5%{opacity:1}
-  45%{opacity:1}
-  50%{opacity:0}
-  100%{opacity:0}
-}
-
-/* Optional leather grain depth */
-.hero::before{
-  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(1100px 560px at 55% 38%, rgba(0,0,0,.00), rgba(0,0,0,.26) 62%, rgba(0,0,0,.44) 100%);
-}
-
-/* Copy styling (keeps your current look; adjust if needed) */
-.hero-copy{max-width:980px;text-align:center;padding:88px 20px}
-.overline{letter-spacing:.22em;text-transform:none}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .slide{animation:none}
-  .slide:nth-child(1){opacity:1}
-  .slide:nth-child(2){opacity:0}
-}
-/* —— Brand / logo —— */
-.brand{display:flex;align-items:center;gap:10px}
-.crest{width:40px;height:40px;display:block;object-fit:contain;border-radius:50%}
-
-/* —— HERO slider —— */
-.hero{
-  position:relative; isolation:isolate;
-  min-height:clamp(560px,76vh,900px);
-  display:grid; place-items:center;
-  overflow:hidden;
-}
-
-/* remove any older .hero-media in your HTML/CSS */
-
-/* Slides */
-.hero-slides{position:absolute; inset:0; z-index:-2}
-.slide{
-  position:absolute; inset:0; opacity:0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
-    var(--img) center 45%/cover no-repeat;
-  animation:heroFade 16s infinite;
-  filter:saturate(108%) contrast(1.05);
-}
-.slide:nth-child(1){animation-delay:0s; opacity:1}
-.slide:nth-child(2){animation-delay:8s}
-
-@keyframes heroFade{
-  0%{opacity:0}
-  5%{opacity:1}
-  45%{opacity:1}
-  50%{opacity:0}
-  100%{opacity:0}
-}
-
-/* Depth vignette (keep) */
-.hero::before{
-  content:"";
-  position:absolute; inset:0; z-index:-1; pointer-events:none;
-  background:radial-gradient(1100px 560px at 55% 38%, rgba(0,0,0,.00), rgba(0,0,0,.26) 62%, rgba(0,0,0,.44) 100%);
-}
-
-/* Copy readability */
-.hero-copy{max-width:980px; text-align:center; padding:88px 20px}
-.overline{font-family:"Crimson Pro",serif; font-variant:small-caps; letter-spacing:.22em; color:var(--muted); margin:0 0 12px; text-shadow:0 1px 0 rgba(0,0,0,.5)}
-.hero h1{font-family:"Crimson Pro",serif; font-weight:600; font-size:clamp(36px,5vw,60px); margin:0 0 12px; text-shadow:0 2px 8px rgba(0,0,0,.45)}
-.hero .sub{color:var(--muted); font-size:clamp(16px,1.7vw,18px); margin:0 auto 26px; max-width:820px; text-shadow:0 1px 6px rgba(0,0,0,.35)}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion:reduce){
-  .slide{animation:none}
-  .slide:nth-child(1){opacity:1}
-  .slide:nth-child(2){opacity:0}
-}
-/* === Ken Burns pan/zoom for hero slides === */
-
-/* 1) Move the actual photo into a ::after layer we can scale smoothly */
-.slide{
-  position:absolute; inset:0; opacity:0;
-  /* keep the gradient on the base .slide */
-  background: linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%);
-  animation: heroFade 16s infinite;          /* existing cross-fade */
-  will-change: opacity;
-}
-.slide::after{
-  content:"";
-  position:absolute; inset:0;
-  background: var(--img) center 45% / cover no-repeat;
-  transform: translate3d(0,0,0) scale(var(--zb,1.04));
-  animation: panZoom 16s infinite;            /* new movement */
-  will-change: transform, background-position;
-  z-index:-1;
-}
-
-/* 2) Stagger delays so pan matches each slide’s fade timing */
-.slide:nth-child(1){ animation-delay:0s }
-.slide:nth-child(1)::after{ animation-delay:0s }
-
-.slide:nth-child(2){ animation-delay:8s }
-.slide:nth-child(2)::after{ animation-delay:8s }
-
-/* 3) Give each slide its own subtle direction & zoom amounts */
-.slide:nth-child(1)::after{
-  /* slow left-to-right drift + small zoom-in */
-  --zb: 1.05;
-  --tx0: -1.5%;  --ty0: 0%;
-  --tx1:  1.5%;  --ty1: 0%;
-}
-.slide:nth-child(2)::after{
-  /* slight top-to-bottom drift + tiny zoom-out */
-  --zb: 1.08;
-  --tx0: 0%;   --ty0: -1.2%;
-  --tx1: 0%;   --ty1:  1.2%;
-}
-
-/* 4) The animati*
-/* --- TEMP: force a visible hero image to verify path/layers --- */
-.hero{
-  position:relative; isolation:isolate;
-  min-height:clamp(560px,76vh,900px);
-  display:grid; place-items:center; overflow:hidden;
-}
-.hero::before{
-  content:""; position:absolute; inset:0; z-index:-1;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
-    url("assets/img/hs_cue/hs_points_close.jpg") center 50% / cover no-repeat;
-  filter:saturate(108%) contrast(1.05);
-}
-/* --- Bulletproof static hero image (close-up inlay) --- */
-.hero.hero-static{
-  position:relative; isolation:isolate;
-  min-height:clamp(560px,76vh,900px);
-  display:grid; place-items:center; overflow:hidden;
-  /* put the image directly on the element so nothing can cover it accidentally */
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
-    url("assets/img/hs_cue/hs_points_close.jpg") center 50% / cover no-repeat;
-  filter:saturate(108%) contrast(1.05);
-}
-
-/* keep a subtle vignette on top for depth */
-.hero.hero-static::before{
-  content:""; position:absolute; inset:0; pointer-events:none;
-  background:radial-gradient(1100px 560px at 55% 38%,
-    rgba(0,0,0,0), rgba(0,0,0,.26) 62%, rgba(0,0,0,.44) 100%);
+@media (max-width:820px){
+  .primary-nav{gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .primary-nav a{padding:8px 10px}
 }
 
 
