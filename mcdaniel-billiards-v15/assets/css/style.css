@@ -330,7 +330,7 @@ section[id]{scroll-margin-top:96px}
   /* IMPORTANT: set your image here (adjust path if needed) */
   background:
     linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
-    url("assets/img/hs_cue/hs_points_close.jpg") center 45% / cover no-repeat !important;
+    url("assets/img/mcdaniel_cues_all/hs_cue/hs_points_close.jpg") center 45% / cover no-repeat !important;
   filter:saturate(108%) contrast(1.05);
 }
 
