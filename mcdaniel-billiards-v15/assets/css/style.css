@@ -475,6 +475,48 @@ section[id]{scroll-margin-top:96px}
   .slide:nth-child(1){opacity:1}
   .slide:nth-child(2){opacity:0}
 }
+/* === Ken Burns pan/zoom for hero slides === */
+
+/* 1) Move the actual photo into a ::after layer we can scale smoothly */
+.slide{
+  position:absolute; inset:0; opacity:0;
+  /* keep the gradient on the base .slide */
+  background: linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%);
+  animation: heroFade 16s infinite;          /* existing cross-fade */
+  will-change: opacity;
+}
+.slide::after{
+  content:"";
+  position:absolute; inset:0;
+  background: var(--img) center 45% / cover no-repeat;
+  transform: translate3d(0,0,0) scale(var(--zb,1.04));
+  animation: panZoom 16s infinite;            /* new movement */
+  will-change: transform, background-position;
+  z-index:-1;
+}
+
+/* 2) Stagger delays so pan matches each slide’s fade timing */
+.slide:nth-child(1){ animation-delay:0s }
+.slide:nth-child(1)::after{ animation-delay:0s }
+
+.slide:nth-child(2){ animation-delay:8s }
+.slide:nth-child(2)::after{ animation-delay:8s }
+
+/* 3) Give each slide its own subtle direction & zoom amounts */
+.slide:nth-child(1)::after{
+  /* slow left-to-right drift + small zoom-in */
+  --zb: 1.05;
+  --tx0: -1.5%;  --ty0: 0%;
+  --tx1:  1.5%;  --ty1: 0%;
+}
+.slide:nth-child(2)::after{
+  /* slight top-to-bottom drift + tiny zoom-out */
+  --zb: 1.08;
+  --tx0: 0%;   --ty0: -1.2%;
+  --tx1: 0%;   --ty1:  1.2%;
+}
+
+/* 4) The animati*
 
 
 
