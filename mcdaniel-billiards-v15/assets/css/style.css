@@ -653,6 +653,24 @@ section[id]{scroll-margin-top:96px}
 
 /* (If a theme is adding underlines globally) */
 .site-header a { text-decoration: none; }
+/* Hide the small H3 titles above the collage cards */
+.featured .cue-title{ display:none !important; }
+
+/* Make the Featured Cues area wider on desktop (bigger cards) */
+.featured.container{ max-width: 1360px; }         /* was ~1100 */
+@media (min-width: 1600px){
+  .featured.container{ max-width: 1500px; }       /* ultra-wide screens */
+}
+
+/* Enlarge the main image area a bit (taller crop) */
+.cue-grid{ gap: 28px; }
+.cue-card{ padding: 16px; border-radius: 18px; }
+.cue-main img{
+  aspect-ratio: 2 / 1;                            /* was ~5/2; lower = taller */
+}
+
+/* Slightly bigger thumbs spacing */
+.cue-thumbs{ gap: 12px; }
 
 
 
