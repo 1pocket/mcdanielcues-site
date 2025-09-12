@@ -546,6 +546,94 @@ section[id]{scroll-margin-top:96px}
   object-position: center !important;
   display: block;
 }
+/* === Featured Cues: collage cards === */
+.cue-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr)); /* big cards */
+  gap:26px;
+}
+
+.cue-card{
+  background:var(--panel);
+  border:1px solid #1f1f1f;
+  border-radius:16px;
+  padding:14px;
+  transition:box-shadow .2s ease,border-color .2s ease;
+}
+.cue-card:hover{ box-shadow:0 10px 30px rgba(0,0,0,.25); border-color:#2a2a2a }
+
+.cue-title{
+  font-family:"Crimson Pro",serif;
+  font-size:20px; font-weight:600; margin:4px 4px 10px;
+}
+
+/* Reset buttons */
+.cue-card button{ all:unset; display:block; cursor:pointer }
+.cue-card button:focus-visible{ outline:2px solid var(--brass); outline-offset:3px; border-radius:12px }
+
+/* Main image: wide & shallow to show the whole cue */
+.cue-main img{
+  width:100%;
+  aspect-ratio: 5 / 2;         /* wide */
+  object-fit:cover;
+  object-position:center;
+  border-radius:12px;
+  display:block;
+}
+
+/* Thumbs row: small squares */
+.cue-thumbs{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:10px;
+}
+.cue-thumbs img{
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  object-position:center;
+  border-radius:10px;
+  display:block;
+  border:1px solid #222;
+  transition:transform .12s ease, border-color .12s ease;
+}
+.cue-thumbs button:hover img{ transform:translateY(-1px); border-color:#2f2f2f }
+
+/* Responsive */
+@media (max-width:1100px){
+  .cue-grid{ grid-template-columns:1fr; }
+}
+
+/* === Lightbox === */
+.lb[hidden]{ display:none !important; }
+.lb{
+  position:fixed; inset:0; z-index:1000;
+  background:rgba(0,0,0,.82);
+  display:grid; place-items:center;
+  padding:30px;
+}
+.lb-img{
+  max-width:min(92vw, 1400px);
+  max-height:82vh;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+/* Controls */
+.lb-close,.lb-prev,.lb-next{
+  position:fixed; top:50%; transform:translateY(-50%);
+  background:rgba(20,20,20,.7); color:#fff;
+  width:44px; height:44px; border-radius:999px;
+  display:grid; place-items:center; font-size:26px; font-weight:700;
+  border:1px solid #2a2a2a; cursor:pointer;
+  transition:background-color .12s ease, transform .12s ease;
+}
+.lb-close{ top:20px; right:20px; transform:none; font-size:28px }
+.lb-prev{ left:20px }
+.lb-next{ right:20px }
+.lb-close:hover,.lb-prev:hover,.lb-next:hover{ background:#111; transform:translateY(-50%) scale(1.05) }
+.lb-close:hover{ transform:none }
 
 
 
