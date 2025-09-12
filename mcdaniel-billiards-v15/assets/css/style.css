@@ -634,6 +634,25 @@ section[id]{scroll-margin-top:96px}
 .lb-next{ right:20px }
 .lb-close:hover,.lb-prev:hover,.lb-next:hover{ background:#111; transform:translateY(-50%) scale(1.05) }
 .lb-close:hover{ transform:none }
+/* Header brand: remove link underline + keep contrast */
+.site-header .brand,
+.site-header .brand:link,
+.site-header .brand:visited,
+.site-header .brand:hover,
+.site-header .brand:active {
+  text-decoration: none !important;
+  color: var(--ink) !important;
+}
+
+/* Optional: keep an accessible focus ring on the brand link */
+.site-header .brand:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* (If a theme is adding underlines globally) */
+.site-header a { text-decoration: none; }
 
 
 
