@@ -97,3 +97,24 @@ section{scroll-margin-top:72px}
   .two-col{grid-template-columns:1fr}
   .hero img{height:48vh}
 }
+/* Fallback hero background so it never looks empty */
+.hero { position:relative; min-height:60vh; }
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background: url('../img/baltimore-bullet-cue.jpg') center/cover no-repeat;
+  filter:contrast(1.05);
+  z-index:0;
+}
+.hero-overlay{ position:relative; z-index:1 }
+/* If you’re not rotating images yet, you can temporarily hide the track */
+.hero-track{ display:none; }
+/* Make cards “just work” if thumbnails vary */
+.card img{ width:100%; aspect-ratio:3/2; object-fit:cover; }
+
+/* Ensure overlay doesn’t collide on small screens */
+@media (max-width:900px){
+  .grid{ grid-template-columns:repeat(2,1fr) }
+  .hero img{ height:48vh }
+  .hero{ min-height:48vh }
+}
