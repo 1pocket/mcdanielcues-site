@@ -477,6 +477,15 @@ section[id]{scroll-margin-top:96px}
   .primary-nav{gap:8px;flex-wrap:wrap;justify-content:flex-end}
   .primary-nav a{padding:8px 10px}
 }
+.hero{
+  position:relative; isolation:isolate;
+  min-height:clamp(560px,76vh,900px);
+  display:grid; place-items:center; overflow:hidden;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
+    url("../img/mcdaniel_cues_all/hs_cue/hs_points_close.jpg") center 45% / cover no-repeat !important;
+  filter:saturate(108%) contrast(1.05);
+}
 
 
 
