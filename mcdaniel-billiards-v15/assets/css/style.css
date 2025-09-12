@@ -535,6 +535,17 @@ section[id]{scroll-margin-top:96px}
   display:block;
   border-radius:0;
 }
+/* === FORCE Featured Cues to square tiles === */
+#gallery .grid .card img,
+.featured .grid .card img,
+.container .grid .card img {
+  aspect-ratio: 1 / 1 !important; /* override earlier 2/3 */
+  width: 100% !important;
+  height: auto !important;        /* neutralize any fixed height */
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block;
+}
 
 
 
