@@ -671,6 +671,30 @@ section[id]{scroll-margin-top:96px}
 
 /* Slightly bigger thumbs spacing */
 .cue-thumbs{ gap: 12px; }
+/* 1) Make later sections as wide as Featured so they don't look "smaller" */
+.container{ max-width:1360px; }                 /* match Featured width */
+@media (min-width:1600px){
+  .container{ max-width:1500px; }               /* ultra-wide screens */
+}
+
+/* 2) Ensure sections stack cleanly with consistent spacing */
+.featured{ margin-bottom:56px; }
+#story{ padding-top:40px; }
+#team{  padding-top:56px; }
+#commission{ padding-top:56px; }
+
+/* 3) Team grid: simpler, more robust two-column layout on desktop */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr)); /* 2-up */
+  gap:28px;
+}
+.member{ grid-column:auto; }                      /* override older span:6 rule */
+
+/* One column on small screens */
+@media (max-width: 960px){
+  .team-grid{ grid-template-columns:1fr; }
+}
 
 
 
