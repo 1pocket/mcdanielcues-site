@@ -517,6 +517,19 @@ section[id]{scroll-margin-top:96px}
 }
 
 /* 4) The animati*
+/* --- TEMP: force a visible hero image to verify path/layers --- */
+.hero{
+  position:relative; isolation:isolate;
+  min-height:clamp(560px,76vh,900px);
+  display:grid; place-items:center; overflow:hidden;
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
+    url("assets/img/hs_cue/hs_points_close.jpg") center 50% / cover no-repeat;
+  filter:saturate(108%) contrast(1.05);
+}
 
 
 
