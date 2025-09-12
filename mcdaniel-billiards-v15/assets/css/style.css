@@ -695,6 +695,45 @@ section[id]{scroll-margin-top:96px}
 @media (max-width: 960px){
   .team-grid{ grid-template-columns:1fr; }
 }
+/* ------ Unify widths so sections don't look smaller ------ */
+.container{
+  width:100%;
+  max-width:1360px;        /* match Featured width */
+  margin:0 auto;
+}
+@media (min-width:1600px){
+  .container{ max-width:1500px; }
+}
+
+/* ------ Make sections stack cleanly (no side-by-side creep) ------ */
+.featured,
+#story,
+#team,
+#commission{
+  display:block;
+  float:none;
+  clear:both;              /* force the next section to start below */
+}
+
+/* Extra breathing room between sections */
+.featured{ margin-bottom:56px; }
+#story{ padding-top:40px; }
+#team{  padding-top:56px; }
+#commission{ margin-top:56px; }
+
+/* ------ Team layout: stable two-column grid on desktop ------ */
+#team .team-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:28px;
+  align-items:start;
+}
+#team .member{ margin:0; }  /* cancel any stray margins */
+
+/* One column on small screens */
+@media (max-width:960px){
+  #team .team-grid{ grid-template-columns:1fr; }
+}
 
 
 
