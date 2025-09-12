@@ -530,6 +530,24 @@ section[id]{scroll-margin-top:96px}
     url("assets/img/hs_cue/hs_points_close.jpg") center 50% / cover no-repeat;
   filter:saturate(108%) contrast(1.05);
 }
+/* --- Bulletproof static hero image (close-up inlay) --- */
+.hero.hero-static{
+  position:relative; isolation:isolate;
+  min-height:clamp(560px,76vh,900px);
+  display:grid; place-items:center; overflow:hidden;
+  /* put the image directly on the element so nothing can cover it accidentally */
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
+    url("assets/img/hs_cue/hs_points_close.jpg") center 50% / cover no-repeat;
+  filter:saturate(108%) contrast(1.05);
+}
+
+/* keep a subtle vignette on top for depth */
+.hero.hero-static::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(1100px 560px at 55% 38%,
+    rgba(0,0,0,0), rgba(0,0,0,.26) 62%, rgba(0,0,0,.44) 100%);
+}
 
 
 
