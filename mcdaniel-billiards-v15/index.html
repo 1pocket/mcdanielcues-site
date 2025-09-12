@@ -7,69 +7,64 @@
 
   <!-- Favicon / badge -->
   <link rel="icon" href="assets/img/mc-badge.svg"/>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="top">
   <!-- Header -->
-<header class="site-header">
-  <div class="container nav">
-<a class="brand" href="#top" aria-label="McDaniel Billiards & Classic Cues LLC">
-  <img src="assets/img/mc-badge.svg" alt="MC monogram" class="crest" width="40" height="40">
-  <span class="brandline">McDaniel Billiards & Classic Cues LLC</span>
-</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="McDaniel Billiards & Classic Cues LLC">
+        <img src="assets/img/mc-badge.svg" alt="MC monogram" class="crest" width="40" height="40">
+        <span class="brandline">McDaniel Billiards & Classic Cues LLC</span>
+      </a>
 
-
-    <nav class="primary-nav" aria-label="Primary">
-      <a href="#join">Join the List</a>
-      <a href="#story">Our Story</a>
-      <a href="#heritage">Heritage</a>
-      <a href="#team">Meet Our Team</a>
-      <a href="#contact">Contact Us</a>
-    </nav>
-  </div>
-</header>
-  <section id="hero" class="hero" aria-label="Hero">
-  <div class="container hero-copy">
-    <p class="overline">When Only the Best Will Do</p>
-    <h1>Hand-built cues by Bill McDaniel</h1>
-    <p class="sub">Legendary fit, finish, and playability — each cue carefully crafted in Jackson, Tennessee.</p>
-    <div class="cta-row">
-      <a class="btn btn-brass" href="#join">Join the List</a>
-      <a class="btn btn-ghost" href="#gallery">View Gallery</a>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="#join">Join the List</a>
+        <a href="#story">Our Story</a>
+        <a href="#heritage">Heritage</a>
+        <a href="#team">Meet Our Team</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-
+  <!-- Hero (background image is set in CSS on .hero) -->
+  <section id="hero" class="hero" aria-label="Hero">
+    <div class="container hero-copy">
+      <p class="overline">When Only the Best Will Do</p>
+      <h1>Hand-built cues by Bill McDaniel</h1>
+      <p class="sub">Legendary fit, finish, and playability — each cue carefully crafted in Jackson, Tennessee.</p>
+      <div class="cta-row">
+        <a class="btn btn-brass" href="#join">Join the List</a>
+        <a class="btn btn-ghost" href="#gallery">View Gallery</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Featured Gallery -->
-<section id="gallery" class="featured container" aria-label="Featured Cues">
-  <h2>Featured Cues</h2>
-  <div class="grid">
-    <figure class="card">
-      <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_butt.jpg" alt="ZAM Ebony &amp; BEM Lazy Z — butt detail" loading="lazy" width="800" height="533">
-      <figcaption>ZAM Ebony &amp; BEM — butt detail</figcaption>
-    </figure>
+  <section id="gallery" class="featured container" aria-label="Featured Cues">
+    <h2>Featured Cues</h2>
+    <div class="grid">
+      <figure class="card">
+        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_butt.jpg" alt="ZAM Ebony &amp; BEM Lazy Z — butt detail" loading="lazy" width="800" height="533">
+      </figure>
 
-    <figure class="card">
-      <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt="Lazy Z — points detail" loading="lazy" width="800" height="533">
-      <figcaption>Lazy Z — points detail</figcaption>
-    </figure>
+      <figure class="card">
+        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt="Lazy Z — points detail" loading="lazy" width="800" height="533">
+      </figure>
 
-    <figure class="card">
-      <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt="BEM &amp; Ebony Lazy Z — rear" loading="lazy" width="800" height="533">
-      <figcaption>BEM &amp; Ebony — rear</figcaption>
-    </figure>
+      <figure class="card">
+        <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt="BEM &amp; Ebony Lazy Z — rear" loading="lazy" width="800" height="533">
+      </figure>
 
-    <figure class="card">
-      <img src="assets/img/mcdaniel_cues_all/cue7_plain_ebony/plain_ebony_ring.jpg" alt="Plain Ebony — ring detail" loading="lazy" width="800" height="533">
-      <figcaption>Plain Ebony — ring detail</figcaption>
-    </figure>
-  </div>
-</section>
-
-
+      <figure class="card">
+        <img src="assets/img/mcdaniel_cues_all/cue7_plain_ebony/plain_ebony_ring.jpg" alt="Plain Ebony — ring detail" loading="lazy" width="800" height="533">
+      </figure>
+    </div>
+  </section>
 
   <!-- Our Story -->
   <section id="story" class="container heritage" aria-label="Our Story">
@@ -105,67 +100,53 @@
     </div>
   </section>
 
-  <!-- Heritage (short positioning block) -->
+  <!-- Heritage -->
   <section id="heritage" class="container commission" aria-label="Heritage">
     <h2>Heritage</h2>
     <p>From Balabushka’s influence to modern CNC precision, McDaniel cues blend tradition and innovation with an unmistakable feel.</p>
   </section>
-  <!-- MEET OUR TEAM -->
-<section id="team" class="section team">
-  <div class="container">
-    <header class="section-head">
-      <h2>Meet Our Team</h2>
-      <p class="section-sub">The hands, eyes, and heritage behind every McDaniel cue.</p>
-    </header>
 
-    <div class="team-grid">
-      <!-- Bill McDaniel -->
-      <article class="member">
-        <img class="portrait" src="assets/img/team/bill-mcdaniel.jpg" alt="Bill McDaniel, Master Cue Maker" loading="lazy" width="640" height="800">
-        <div class="member-body">
-          <h3 class="name">Bill McDaniel</h3>
-          <p class="role">Master Cue Maker</p>
-          <p class="bio">
-            A lifelong player and craftsman, Bill blends traditional handwork with exacting tolerances. 
-            Every cue is voiced for balance, feel, and longevity—one at a time, in Jackson, Tennessee.
-          </p>
-        </div>
-      </article>
+  <!-- Meet Our Team -->
+  <section id="team" class="section team" aria-label="Meet Our Team">
+    <div class="container">
+      <header class="section-head">
+        <h2>Meet Our Team</h2>
+        <p class="section-sub">The hands, eyes, and heritage behind every McDaniel cue.</p>
+      </header>
 
-      <!-- Chase Channell -->
-      <article class="member">
-        <img class="portrait" src="assets/img/team/chase-channell.jpg" alt="Chase Channell, General Manager" loading="lazy" width="640" height="800">
-        <div class="member-body">
-          <h3 class="name">Chase Channell</h3>
-          <p class="role">General Manager</p>
-          <p class="bio">
-            Stewarding the McDaniel legacy, Chase oversees operations, customer experience, and 
-            commissions—ensuring every build meets our standard: When Only the Best Will Do.
-          </p>
-        </div>
-      </article>
+      <div class="team-grid">
+        <article class="member">
+          <img class="portrait" src="assets/img/team/bill-mcdaniel.jpg" alt="Bill McDaniel, Master Cue Maker" loading="lazy" width="640" height="800">
+          <div class="member-body">
+            <h3 class="name">Bill McDaniel</h3>
+            <p class="role">Master Cue Maker</p>
+            <p class="bio">
+              A lifelong player and craftsman, Bill blends traditional handwork with exacting tolerances.
+              Every cue is voiced for balance, feel, and longevity—one at a time, in Jackson, Tennessee.
+            </p>
+          </div>
+        </article>
 
-      <!-- Add more members as needed -->
-      <!--
-      <article class="member">
-        <img class="portrait" src="assets/img/team/firstname-lastname.jpg" alt="Name, Title" loading="lazy" width="640" height="800">
-        <div class="member-body">
-          <h3 class="name">Name</h3>
-          <p class="role">Title</p>
-          <p class="bio">Short, classy 2–3 sentence bio.</p>
-        </div>
-      </article>
-      -->
+        <article class="member">
+          <img class="portrait" src="assets/img/team/chase-channell.jpg" alt="Chase Channell, General Manager" loading="lazy" width="640" height="800">
+          <div class="member-body">
+            <h3 class="name">Chase Channell</h3>
+            <p class="role">General Manager</p>
+            <p class="bio">
+              Stewarding the McDaniel legacy, Chase oversees operations, customer experience, and
+              commissions—ensuring every build meets our standard: When Only the Best Will Do.
+            </p>
+          </div>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Commission -->
-  <section id="commission" class="container commission" aria-label="Commission a Cue">
+  <section id="join" class="container commission" aria-label="Commission a Cue">
     <h2>Commission</h2>
     <p>We maintain a limited waitlist to preserve quality. Submit your interest and we’ll follow up with build options and timelines.</p>
-    <a class="btn" href="mailto:orders@mcdanielcues.com">Join the List</a>
+    <a class="btn btn-brass" href="mailto:orders@mcdanielcues.com">Join the List</a>
   </section>
 
   <!-- Footer -->
@@ -183,29 +164,16 @@
     <div class="legal">© <span id="yr"></span> McDaniel Billiards &amp; Classic Cues LLC • All Rights Reserved</div>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    // Hero auto-slide (guarded)
-    (function(){
-      const track = document.querySelector('.hero-track');
-      if(!track) return;
-      let idx = 0;
-      const total = track.children.length || 0;
-      if (!total) return;
-      setInterval(() => {
-        idx = (idx + 1) % total;
-        track.style.transform = `translateX(${-idx * 100}%)`;
-      }, 4000);
-    })();
-
-    // Smooth scroll
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const t = document.querySelector(a.getAttribute('href'));
         if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
       });
     });
-
-    // Year
+    // Footer year
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
 </body>
