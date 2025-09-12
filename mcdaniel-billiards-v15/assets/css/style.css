@@ -378,6 +378,50 @@ section[id]{scroll-margin-top:96px}
   image-rendering:auto;
   filter:none; /* ensure no accidental invert/filter */
 }
+/* HERO base (keep your existing hero sizing if you like) */
+.hero{position:relative;isolation:isolate;min-height:clamp(560px,76vh,900px);display:grid;place-items:center;overflow:hidden}
+
+/* Slides layer */
+.hero-slides{position:absolute;inset:0;z-index:-2}
+.slide{
+  position:absolute;inset:0;opacity:0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
+    var(--img) center 45%/cover no-repeat;
+  animation: heroFade 16s infinite;
+  filter:saturate(108%) contrast(1.05);
+}
+
+/* First slide shows immediately */
+.slide:nth-child(1){animation-delay:0s; opacity:1}
+.slide:nth-child(2){animation-delay:8s}
+
+/* Elegant cross-fade */
+@keyframes heroFade{
+  0%{opacity:0}
+  5%{opacity:1}
+  45%{opacity:1}
+  50%{opacity:0}
+  100%{opacity:0}
+}
+
+/* Optional leather grain depth */
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(1100px 560px at 55% 38%, rgba(0,0,0,.00), rgba(0,0,0,.26) 62%, rgba(0,0,0,.44) 100%);
+}
+
+/* Copy styling (keeps your current look; adjust if needed) */
+.hero-copy{max-width:980px;text-align:center;padding:88px 20px}
+.overline{letter-spacing:.22em;text-transform:none}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .slide{animation:none}
+  .slide:nth-child(1){opacity:1}
+  .slide:nth-child(2){opacity:0}
+}
+
 
 
 
