@@ -214,16 +214,76 @@
   </footer>
 
   <!-- Scripts -->
-  <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+<script>
+(function(){
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('.lb-img');
+  const btnPrev = lb.querySelector('.lb-prev');
+  const btnNext = lb.querySelector('.lb-next');
+  const btnClose = lb.querySelector('.lb-close');
+
+  let current = 0;
+  let images = [];
+  let lastFocus = null;
+
+  function openLightbox(imgList, startIndex=0){
+    images = imgList;
+    current = startIndex;
+    lastFocus = document.activeElement;
+    update();
+    lb.hidden = false;
+    btnClose.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeLightbox(){
+    lb.hidden = true;
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus) lastFocus.focus();
+  }
+  function onKey(e){
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  }
+  function update(){
+    if (!images.length) return;
+    lbImg.src = images[current].src;
+    lbImg.alt = images[current].alt || '';
+  }
+  function prev(){ current = (current - 1 + images.length) % images.length; update(); }
+  function next(){ current = (current + 1) % images.length; update(); }
+
+  btnClose.addEventListener('click', closeLightbox);
+  btnPrev.addEventListener('click', prev);
+  btnNext.addEventListener('click', next);
+  lb.addEventListener('click', (e)=>{ if (e.target === lb) closeLightbox(); });
+
+  // Wire up each cue-card
+  document.querySelectorAll('.cue-card').forEach(card=>{
+    const tmpl = card.querySelector('.cue-images');
+    if (!tmpl) return;
+    const imgs = Array.from(tmpl.content.querySelectorAll('img')).map(img => ({
+      src: img.getAttribute('src'),
+      alt: img.getAttribute('alt') || ''
+    }));
+
+    // Main click
+    const mainBtn = card.querySelector('.cue-main');
+    if (mainBtn) {
+      mainBtn.addEventListener('click', ()=>{
+        openLightbox(imgs, 0);
+      });
+    }
+    // Thumb clicks
+    card.querySelectorAll('.cue-thumbs button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const i = parseInt(btn.dataset.index, 10) || 0;
+        openLightbox(imgs, i);
       });
     });
-    // Footer year
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+  });
+})();
+</script>
+
 </body>
 </html>
