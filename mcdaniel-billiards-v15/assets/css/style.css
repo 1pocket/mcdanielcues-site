@@ -106,14 +106,16 @@ section{scroll-margin-top:72px}
   .two-col{grid-template-columns:1fr}
   .hero img{height:48vh}
 }
-/* Fallback hero background so it never looks empty */
-.hero { position:relative; min-height:60vh; }
+/* HERO fallback background (shows behind the sliding images) */
 .hero::before{
   content:"";
-  position:absolute; inset:0;
-  background: url('../img/baltimore-bullet-cue.jpg') center/cover no-repeat;
-  filter:contrast(1.05);
-  z-index:0;
+  position:absolute; inset:0; z-index:0;
+  background: url('../img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_whole.jpg') center/cover no-repeat;
+  filter: contrast(1.05);
+}
+.hero-track{ position: relative; z-index:1; } /* slider above bg */
+.hero-overlay{ position: relative; z-index:2; } /* text above slider */
+
 }
 .hero-overlay{ position:relative; z-index:1 }
 /* If you’re not rotating images yet, you can temporarily hide the track */
