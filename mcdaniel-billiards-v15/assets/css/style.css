@@ -526,6 +526,15 @@ section[id]{scroll-margin-top:96px}
 @media (max-width:640px){
   .grid{ grid-template-columns:1fr }
 }
+/* === Featured Cues: square crop === */
+.card img{
+  width:100%;
+  aspect-ratio: 1 / 1;   /* perfect square */
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  border-radius:0;
+}
 
 
 
