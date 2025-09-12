@@ -93,37 +93,45 @@
 
    
 
-    <!-- Cue 2 (example; swap images/titles) -->
-    <article class="cue-card" data-gallery="bem-ebony">
-      <h3 class="cue-title">BEM &amp; Ebony — Lazy Z</h3>
+<!-- Cue 2: HS cue -->
+<article class="cue-card" data-gallery="hs-cue">
+  <!-- (Title hidden via CSS below, so you can keep or delete this line) -->
+  <h3 class="cue-title">HS — Ebony / Lazy Z</h3>
 
-      <button class="cue-main" data-index="0" aria-label="Open gallery: BEM &amp; Ebony">
-        <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_whole.jpg" alt="BEM &amp; Ebony, whole cue">
-      </button>
+  <!-- Featured image -->
+  <button class="cue-main" data-index="0" aria-label="Open gallery: HS cue">
+    <img
+      src="assets/img/mcdaniel_cues_all/hs_cue/hs_points.jpg"
+      alt="HS cue — points (featured)"
+    >
+  </button>
 
-      <div class="cue-thumbs">
-        <button data-index="1"><img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt=""></button>
-        <button data-index="2"><img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt=""></button>
-        <button data-index="3"><img src="assets/img/mcdaniel_cues_all/cue7_plain_ebony/plain_ebony_ring.jpg" alt=""></button>
-      </div>
-
-      <template class="cue-images">
-        <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_whole.jpg" alt="BEM &amp; Ebony, whole cue">
-        <img src="assets/img/mcdaniel_cues_all/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt="BEM &amp; Ebony — rear">
-        <img src="assets/img/mcdaniel_cues_all/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt="Lazy Z — points detail">
-        <img src="assets/img/mcdaniel_cues_all/cue7_plain_ebony/plain_ebony_ring.jpg" alt="Plain Ebony — ring detail">
-      </template>
-    </article>
+  <!-- Thumbs -->
+  <div class="cue-thumbs">
+    <button data-index="1" aria-label="Whole cue">
+      <img src="assets/img/mcdaniel_cues_all/hs_cue/hs_whole.jpg" alt="">
+    </button>
+    <button data-index="2" aria-label="Butt detail">
+      <img src="assets/img/mcdaniel_cues_all/hs_cue/hs_butt.jpg" alt="">
+    </button>
+    <button data-index="3" aria-label="Points close">
+      <img src="assets/img/mcdaniel_cues_all/hs_cue/hs_points_close.jpg" alt="">
+    </button>
+    <button data-index="4" aria-label="Lazy Z butt">
+      <img src="assets/img/mcdaniel_cues_all/hs_cue/hs_lazy_z_butt.jpg" alt="">
+    </button>
   </div>
-</section>
 
-<!-- Lightbox (one per page) -->
-<div id="lightbox" class="lb" hidden aria-modal="true" role="dialog">
-  <button class="lb-close" aria-label="Close">×</button>
-  <button class="lb-prev" aria-label="Previous">‹</button>
-  <img class="lb-img" alt="">
-  <button class="lb-next" aria-label="Next">›</button>
-</div>
+  <!-- Lightbox sequence (first = featured) -->
+  <template class="cue-images">
+    <img src="assets/img/mcdaniel_cues_all/hs_cue/hs_points.jpg" alt="Points">
+    <img src="assets/img/mcdaniel_cues_all/hs_cue/hs_whole.jpg" alt="Whole cue">
+    <img src="assets/img/mcdaniel_cues_all/hs_cue/hs_butt.jpg" alt="Butt detail">
+    <img src="assets/img/mcdaniel_cues_all/hs_cue/hs_points_close.jpg" alt="Points close">
+    <img src="assets/img/mcdaniel_cues_all/hs_cue/hs_lazy_z_butt.jpg" alt="Lazy Z butt">
+  </template>
+</article>
+
 
 
   <!-- Our Story -->
