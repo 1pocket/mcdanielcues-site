@@ -6,7 +6,7 @@
   <title>McDaniel Billiards & Classic Cues LLC</title>
 
   <!-- Favicon / badge -->
-  <link rel="icon" href="assets/img/crest.svg"/>
+  <link rel="icon" href="assets/img/mc-badge.svg"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -32,47 +32,42 @@
   </header>
 
   <!-- Hero (uses whole-cue images) -->
-<section id="hero" class="hero" aria-label="Hero">
-  <div class="hero-track">
-    <img src="assets/img/cue6_zam_bem_lazyz/zam_bem_whole.jpg" alt="ZAM Ebony &amp; BEM Lazy Z — whole" loading="eager" width="1600" height="900">
-    <img src="assets/img/cue8_bem_ebony_lazyz/bem_ebony_whole.jpg" alt="BEM &amp; Ebony Lazy Z — whole" loading="lazy" width="1600" height="900">
-    <img src="assets/img/hs_cue/hs_whole.jpg" alt="Ivory &amp; Ebony motif — whole" loading="lazy" width="1600" height="900">
-    <img src="assets/img/cue7_plain_ebony/plain_ebony_whole.jpg" alt="Plain Ebony — whole" loading="lazy" width="1600" height="900">
-  </div>
-  <div class="hero-overlay">
-    <h1>Hand-built cues by Bill McDaniel</h1>
-    <p>Legendary fit, finish, and playability — each cue carefully crafted in Tennessee.</p>
-    <a href="#commission" class="btn">Join the List</a>
-  </div>
-</section>
-
-
+  <section id="hero" class="hero" aria-label="Hero">
+    <div class="hero-track">
+      <img src="assets/img/cue6_zam_bem_lazyz/zam_bem_whole.jpg" alt="ZAM Ebony &amp; BEM Lazy Z — whole" loading="eager" width="1600" height="900">
+      <img src="assets/img/cue8_bem_ebony_lazyz/bem_ebony_whole.jpg" alt="BEM &amp; Ebony Lazy Z — whole" loading="lazy" width="1600" height="900">
+      <img src="assets/img/hs_cue/hs_whole.jpg" alt="Ivory &amp; Ebony motif — whole" loading="lazy" width="1600" height="900">
+      <img src="assets/img/cue7_plain_ebony/plain_ebony_whole.jpg" alt="Plain Ebony — whole" loading="lazy" width="1600" height="900">
+    </div>
+    <div class="hero-overlay">
+      <h1>Hand-built cues by Bill McDaniel</h1>
+      <p>Legendary fit, finish, and playability — each cue carefully crafted in Tennessee.</p>
+      <a href="#commission" class="btn">Join the List</a>
+    </div>
+  </section>
 
   <!-- Featured Gallery -->
-<section class="featured container">
-  <h2>Featured Cues</h2>
-  <div class="grid">
-    <figure class="card">
-      <img src="assets/img/cue6_zam_bem_lazyz/zam_bem_butt.jpg" alt="ZAM Ebony &amp; BEM Lazy Z — butt detail" loading="lazy" width="800" height="533">
-      <figcaption>ZAM Ebony &amp; BEM — butt detail</figcaption>
-    </figure>
-    <figure class="card">
-      <img src="assets/img/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt="ZAM Ebony &amp; BEM — points detail" loading="lazy" width="800" height="533">
-      <figcaption>Lazy Z — points detail</figcaption>
-    </figure>
-    <figure class="card">
-      <img src="assets/img/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt="BEM &amp; Ebony Lazy Z — rear" loading="lazy" width="800" height="533">
-      <figcaption>BEM &amp; Ebony — rear</figcaption>
-    </figure>
-    <figure class="card">
-      <img src="assets/img/cue7_plain_ebony/plain_ebony_ring.jpg" alt="Plain Ebony — ring detail" loading="lazy" width="800" height="533">
-      <figcaption>Plain Ebony — ring detail</figcaption>
-    </figure>
-  </div>
-</section>
-
-
-     
+  <section id="gallery" class="featured container" aria-label="Featured Cues">
+    <h2>Featured Cues</h2>
+    <div class="grid">
+      <figure class="card">
+        <img src="assets/img/cue6_zam_bem_lazyz/zam_bem_butt.jpg" alt="ZAM Ebony &amp; BEM Lazy Z — butt detail" loading="lazy" width="800" height="533">
+        <figcaption>ZAM Ebony &amp; BEM — butt detail</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="assets/img/cue6_zam_bem_lazyz/zam_bem_points_detail.jpg" alt="ZAM Ebony &amp; BEM — points detail" loading="lazy" width="800" height="533">
+        <figcaption>Lazy Z — points detail</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="assets/img/cue8_bem_ebony_lazyz/bem_ebony_rear.jpg" alt="BEM &amp; Ebony Lazy Z — rear" loading="lazy" width="800" height="533">
+        <figcaption>BEM &amp; Ebony — rear</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="assets/img/cue7_plain_ebony/plain_ebony_ring.jpg" alt="Plain Ebony — ring detail" loading="lazy" width="800" height="533">
+        <figcaption>Plain Ebony — ring detail</figcaption>
+      </figure>
+    </div>
+  </section>
 
   <!-- Our Story -->
   <section id="story" class="container heritage" aria-label="Our Story">
@@ -137,13 +132,18 @@
   </footer>
 
   <script>
-    // Hero auto-slide
-    const track = document.querySelector('.hero-track');
-    let idx = 0, total = track.children.length;
-    setInterval(() => {
-      idx = (idx + 1) % total;
-      track.style.transform = `translateX(${-idx * 100}%)`;
-    }, 4000);
+    // Hero auto-slide (guarded)
+    (function(){
+      const track = document.querySelector('.hero-track');
+      if(!track) return;
+      let idx = 0;
+      const total = track.children.length || 0;
+      if (!total) return;
+      setInterval(() => {
+        idx = (idx + 1) % total;
+        track.style.transform = `translateX(${-idx * 100}%)`;
+      }, 4000);
+    })();
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
