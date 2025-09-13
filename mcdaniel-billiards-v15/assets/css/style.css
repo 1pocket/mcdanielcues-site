@@ -734,3 +734,56 @@ section[id]{scroll-margin-top:96px}
 @media (max-width:960px){
   #team .team-grid{ grid-template-columns:1fr; }
 }
+/* ====== LAYOUT GUARD: keep main sections stacked & centered ====== */
+main, .page, 
+.featured, 
+#story, 
+#team, 
+#commission {
+  display:block !important;
+  width:100% !important;
+  max-width:1360px !important;   /* matches your widened container */
+  margin:0 auto !important;
+  float:none !important;
+  clear:both !important;
+}
+
+/* Ensure the general .container remains a simple block wrapper */
+.container { display:block !important; width:100%; margin:0 auto; }
+
+/* Only inner content should use grid (cards, two-col, team grid, etc.) */
+.two-col { display:grid; grid-template-columns:1.3fr .7fr; gap:24px; align-items:center; }
+.team-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:28px; }
+@media (max-width:960px){ .team-grid{ grid-template-columns:1fr; } }
+
+/* Featured cards: keep the v2 layout stable */
+.featured .grid, 
+#gallery .grid, 
+.container > .grid, 
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:22px;
+}
+@media (max-width:1100px){
+  .featured .grid, #gallery .grid, .container > .grid, .grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width:640px){
+  .featured .grid, #gallery .grid, .container > .grid, .grid { grid-template-columns:1fr; }
+}
+
+/* Card image crop back to tall (undo square/4:5 overrides elsewhere) */
+.featured .card img, 
+#gallery .card img, 
+.container .card img, 
+.grid .card img {
+  width:100% !important;
+  aspect-ratio: 2 / 3 !important;
+  height:auto !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  display:block !important;
+}
+
+/* Kill any rogue nth-child spans that made Cue 1/2 bigger */
+.grid .card{ grid-column:auto !important; grid-row:auto !important; }
