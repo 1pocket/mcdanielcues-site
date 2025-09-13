@@ -181,5 +181,47 @@ section[id]{scroll-margin-top:96px}
   .primary-nav a{padding:8px 10px}
 }
 
+/* --- v2 Layout Lock --- */
+#gallery .grid,
+.featured .grid,
+.container .grid,
+.grid{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:22px !important;
+}
+
+.card img,
+#gallery .card img,
+.featured .card img{
+  width:100% !important;
+  aspect-ratio:2 / 3 !important;   /* v2 tall crop */
+  height:auto !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  display:block !important;
+}
+
+.card figcaption{ display:none !important; }
+
+@media (max-width:1100px){
+  #gallery .grid, .featured .grid, .container .grid, .grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width:640px){
+  #gallery .grid, .featured .grid, .container .grid, .grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* Hero: single image (adjust path if yours differs) */
+.hero{
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.58) 55%, rgba(0,0,0,.68) 100%),
+    url("assets/img/hs_cue/hs_points_close.jpg") center 45% / cover no-repeat !important;
+  filter:saturate(108%) contrast(1.05) !important;
+}
+.hero-slides, .slide, .hero-media { display:none !important; }
 
 
