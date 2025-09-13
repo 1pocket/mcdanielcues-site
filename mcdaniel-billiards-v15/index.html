@@ -132,7 +132,8 @@
   </template>
 </article>
 
-
+  </div>          <!-- /.cue-grid -->
+</section>        <!-- /#gallery -->
 
   <!-- Our Story -->
   <section id="story" class="container heritage" aria-label="Our Story">
@@ -231,6 +232,14 @@
     </div>
     <div class="legal">© <span id="yr"></span> McDaniel Billiards &amp; Classic Cues LLC • All Rights Reserved</div>
   </footer>
+
+  <!-- Lightbox container (added) -->
+  <div class="lb" id="lightbox" hidden aria-modal="true" role="dialog">
+    <img class="lb-img" alt="Expanded cue">
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous">‹</button>
+    <button class="lb-next" aria-label="Next">›</button>
+  </div>
 
   <!-- Scripts -->
 <script>
