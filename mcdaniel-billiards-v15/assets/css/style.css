@@ -463,7 +463,12 @@ section[id]{scroll-margin-top:96px}
 .bio{color:var(--muted);margin:0}
 @media (max-width:960px){.member{grid-column:span 12}}
 
-/* ===== Footer ===== */
+/* === Footer Styling === */
+.footer-logo {
+  height: 36px;
+  width: auto;
+}
+
 footer {
   background: #111;
   color: #ccc;
@@ -486,12 +491,6 @@ footer {
   align-items: center;
   gap: 12px;
   margin-bottom: 15px;
-}
-
-.footer-logo {
-  height: 36px;
-  width: auto;
-  filter: brightness(0) invert(1); /* ensures white logo look */
 }
 
 .brand {
@@ -519,6 +518,7 @@ footer {
   font-size: 0.85rem;
   color: #888;
 }
+
 
 
 /* ===== Responsive ===== */
