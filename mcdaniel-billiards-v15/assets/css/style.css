@@ -840,3 +840,13 @@ main, .page,
 
 /* Kill any rogue nth-child spans that made Cue 1/2 bigger */
 .grid .card{ grid-column:auto !important; grid-row:auto !important; }
+
+.commission-section {
+  margin-bottom: 40px; /* Adjust as needed */
+}
+
+.commission-section .join-btn {
+  display: inline-block;
+  margin-top: 15px; /* space above the button */
+}
+
