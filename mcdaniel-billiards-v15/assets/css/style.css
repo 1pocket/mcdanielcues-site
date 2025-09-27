@@ -852,5 +852,17 @@ main, .page,
 footer {
   padding-top: 40px; /* creates breathing room above footer */
 }
+/* --- Commission → add a reliable spacer above the footer --- */
+#join.commission::after {
+  content: "";
+  display: block;
+  height: 28px;              /* tweak: 20–40px as you like */
+}
+
+/* If you prefer margin instead of the pseudo-element, use this: */
+/* #join.commission { margin-bottom: 28px !important; } */
+
+/* Optional: a bit of breathing room from the footer side too */
+footer { padding-top: 24px !important; }
 
 
