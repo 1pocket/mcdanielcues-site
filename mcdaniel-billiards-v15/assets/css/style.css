@@ -842,7 +842,7 @@ main, .page,
 .grid .card{ grid-column:auto !important; grid-row:auto !important; }
 
 .commission-section {
-  margin-bottom: 80px; /* Adjust as needed */
+  margin-bottom: 160px; /* Adjust as needed */
 }
 
 .commission-section .join-btn {
