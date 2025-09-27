@@ -849,4 +849,8 @@ main, .page,
   display: inline-block;
   margin-top: 15px; /* space above the button */
 }
+footer {
+  padding-top: 40px; /* creates breathing room above footer */
+}
+
 
